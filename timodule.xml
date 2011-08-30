@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:module xmlns:ti="http://ti.appcelerator.org"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<!-- Similar to tiapp.xml, but contains module/platform specific configuration 
+		in <iphone> and <android> sections -->
+	<iphone>
+	</iphone>
+	<android xmlns:android="http://schemas.android.com/apk/res/android">
+		<manifest>
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<application>
+				<activity android:name="com.millennialmedia.android.MMAdViewOverlayActivity"
+					android:theme="@android:style/Theme.Translucent.NoTitleBar">
+				</activity>
+				<activity android:name="com.millennialmedia.android.VideoPlayer"
+					android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+					android:configChanges="keyboardHidden|orientation|keyboard">
+				</activity>
+			</application>
+		</manifest>
+	</android>
+</ti:module>
