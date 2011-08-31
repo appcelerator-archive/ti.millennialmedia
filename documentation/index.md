@@ -22,7 +22,20 @@ To access this module from JavaScript, you would do the following:
 ### apid [string]
 Your APID from Millennial Media. This is shown on the "My Apps" > "Manage Apps" page on developer.millennialmedia.com.
 
+### demographics [object]
+Demographic information about the current user, such as their age gender and location. Any ads you display will use
+this information. This is a dictionary with any of the following properties:
+
+* zip [string]
+* age [string]
+* gender [string, "male" or "female"]
+* lat [string]
+* long [string]
+
 ## Methods
+
+### trackGoal(string)
+Tracks a goal for your ad campaign. Takes a single string argument.
 
 ### createView({...})
 Creates a [Ti.MillennialMedia.View][], which will display an ad for you. Takes a dictionary of the properties available

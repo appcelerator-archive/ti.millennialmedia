@@ -11,25 +11,33 @@
 
 #pragma mark -
 #pragma mark Lifecycle and View Management
-
--(void)createView
-{
-    adView = [MMAdView adWithFrame:CGRectMake(0,0,320,53)
-                                        type:MMBannerAdTop
-                                        apid:@"54128"
-                                    delegate:self
-                                      loadAd:YES
-                                  startTimer:YES];
+-(void)createView {
+    // If you're incredulous that we need to ensure we're on the UI thread when we're creating a view...
+    // Well, I was too.
+    ENSURE_UI_THREAD_0_ARGS;
+    bool autoLoad = [TiUtils boolValue:[self.proxy valueForKey:@"autoLoad"] def:YES];
+    bool autoRefresh = [TiUtils boolValue:[self.proxy valueForKey:@"autoRefresh"] def:YES];
+    int type = [TiUtils intValue:[self.proxy valueForKey:@"type"] def:MMBannerAdTop];
+    if (type == MMFullScreenAdLaunch || type == MMFullScreenAdTransition) {
+        adView = [MMAdView interstitialWithType:type
+                                           apid:[TiMillennialmediaModule retrieveAPID]
+                                       delegate:self
+                                         loadAd:autoLoad];
+    }
+    else {
+        adView = [MMAdView adWithFrame:self.frame
+                                  type:type
+                                  apid:[TiMillennialmediaModule retrieveAPID]
+                              delegate:self
+                                loadAd:autoLoad
+                            startTimer:autoRefresh];
+    }
     [self addSubview:adView];
 }
-
--(void)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds
-{
-    //[TiUtils setView:adView positionRect:bounds];
+-(void)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds {
+    [TiUtils setView:adView positionRect:bounds];
 }
-
--(void)dealloc
-{
+-(void)dealloc {
     if (adView != nil) {
         [adView disableAdRefresh];
         [adView removeFromSuperview];
@@ -38,70 +46,61 @@
     [super dealloc];
 }
 
+
 #pragma mark -
-#pragma mark MMAdView Delegate
-
+#pragma mark Additional Settings
 - (NSDictionary *)requestData {
-    return [NSDictionary dictionaryWithObjectsAndKeys:
-            @"21224", @"zip",
-            @"35", @"age",
-            @"male", @"gender",
-            nil];
+    return [TiMillennialmediaModule retrieveDemographics];
 }
-
-/**
- * Set the timer duration for the rotation of ads in seconds. Default: 60
- */
 - (NSInteger)adRefreshDuration {
-    return 30;
+    return [TiUtils intValue:[self.proxy valueForKey:@"refreshDuration"] def:60];
 }
-
-/**
- * Use this method to disable the accelerometer. Default: YES
- */	
 - (BOOL)accelerometerEnabled {
-    return YES;
+    return [TiUtils boolValue:[self.proxy valueForKey:@"accelerometerEnabled"] def:YES];
 }
 
-/**
- * If the following methods are implemented, the delegate will be notified when
- * an ad request succeeds or fails. An ad request is considered to have failed
- * in any situation where no ad is recived.
- */
+#pragma mark-
+#pragma mark Public API
+-(void)refresh:(id)args {
+    [adView refreshAd];
+}
+
+#pragma mark -
+#pragma mark Events
 - (void)adRequestSucceeded:(MMAdView *) adView {
-    NSLog(@"adRequestSucceeded");
+    [self.proxy fireEvent:@"success" withObject:nil];
 }
 
 - (void)adRequestFailed:(MMAdView *) adView {
-    NSLog(@"adRequestFailed");
+    [self.proxy fireEvent:@"fail" withObject:nil];
 }
 
 - (void)adDidRefresh:(MMAdView *) adView {
-    NSLog(@"adDidRefresh");
+    [self.proxy fireEvent:@"refresh" withObject:nil];
 }
 
 - (void)adWasTapped:(MMAdView *) adView {
-    NSLog(@"adWasTapped");
+    [self.proxy fireEvent:@"tapped" withObject:nil];
 }
 
 - (void)adRequestIsCaching:(MMAdView *) adView {
-    NSLog(@"adRequestIsCaching");
+    [self.proxy fireEvent:@"isCaching" withObject:nil];
 }
 
 - (void)applicationWillTerminateFromAd {
-    NSLog(@"applicationWillTerminateFromAd");
+    [self.proxy fireEvent:@"willTerminate" withObject:nil];
 }
 
 - (void)adModalWillAppear {
-    NSLog(@"adModalWillAppear");
+    [self.proxy fireEvent:@"modalWillAppear" withObject:nil];
 }
 
 - (void)adModalDidAppear {
-    NSLog(@"adModalDidAppear");
+    [self.proxy fireEvent:@"modalDidAppear" withObject:nil];
 }
 
 - (void)adModalWasDismissed {
-    NSLog(@"adModalWasDismissed");
+    [self.proxy fireEvent:@"modalWasDismissed" withObject:nil];
 }
 
 @end

@@ -14,4 +14,6 @@
     [(TiMillennialmediaView*)[self view] createView];
 }
 
+USE_VIEW_FOR_UI_METHOD(refresh);
+
 @end

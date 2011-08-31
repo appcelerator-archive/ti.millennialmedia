@@ -6,11 +6,14 @@
  */
 #import "TiUIView.h"
 #import "MMAdView.h"
+#import "TiMillennialmediaModule.h"
 
 @interface TiMillennialmediaView : TiUIView<MMAdDelegate> {
     MMAdView *adView;
 }
 
 -(void)createView;
+
+-(void)refresh:(id)args;
 
 @end

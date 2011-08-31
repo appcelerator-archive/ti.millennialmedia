@@ -8,7 +8,7 @@ WARNING: You must set the "apid" property of Ti.MillennialMedia before you can d
 
 ## Properties
 
-### type [int]
+### type [int, defaults to TYPE_TOP]
 Controls the type of ad that will be displayed to the user. Look at the constants available on [Ti.MillennialMedia][] to
 see what you can set here.
 
@@ -34,9 +34,6 @@ utilized here.
 
 ### refresh()
 Shows a new ad to the user.
-
-### trackGoal(string)
-Tracks a goal for your ad campaign. Takes a single string argument.
 
 ## Events
 
