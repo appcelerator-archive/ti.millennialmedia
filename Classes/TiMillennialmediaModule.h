@@ -5,9 +5,10 @@
  * Please see the LICENSE included with this distribution for details.
  */
 #import "TiModule.h"
+#import "TiApp.h"
 #import "MMAdView.h"
 
-@interface TiMillennialmediaModule : TiModule 
+@interface TiMillennialmediaModule : TiModule <MMAdDelegate>
 {
 }
 

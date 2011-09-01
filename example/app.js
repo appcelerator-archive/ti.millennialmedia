@@ -11,7 +11,7 @@ Ti.MillennialMedia.demographics = {
     lat: '41.866', long: '-88.107'
 };
 
-var activeDemo = 1;
+var activeDemo = 0;
 var demos = ['launch', 'top', 'rectangle', 'transition', 'bottom'];
 
 var win = Ti.UI.createWindow({
@@ -24,8 +24,7 @@ if (demos[activeDemo] == 'launch') {
      * see the rest of your app.
      */
     var launch = Ti.MillennialMedia.createView({
-        type: Ti.MillennialMedia.TYPE_LAUNCH,
-        autoRefresh: false
+        type: Ti.MillennialMedia.TYPE_LAUNCH
     });
     launch.addEventListener('fail', function() {
         Ti.API.info('fail fired!');
@@ -36,7 +35,9 @@ if (demos[activeDemo] == 'launch') {
         win.remove(launch);
     });
     win.add(launch);
-    launch.refresh();
+    win.add(Ti.UI.createLabel({
+        text: 'Welcome back to the app! Was that ad great, or what?'
+    }));
 }
 else if (demos[activeDemo] == 'top') {
     /**

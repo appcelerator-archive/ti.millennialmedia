@@ -12,9 +12,6 @@
 #pragma mark -
 #pragma mark Lifecycle and View Management
 -(void)createView {
-    // If you're incredulous that we need to ensure we're on the UI thread when we're creating a view...
-    // Well, I was too.
-    ENSURE_UI_THREAD_0_ARGS;
     bool autoLoad = [TiUtils boolValue:[self.proxy valueForKey:@"autoLoad"] def:YES];
     bool autoRefresh = [TiUtils boolValue:[self.proxy valueForKey:@"autoRefresh"] def:YES];
     int type = [TiUtils intValue:[self.proxy valueForKey:@"type"] def:MMBannerAdTop];
@@ -32,6 +29,8 @@
                                 loadAd:autoLoad
                             startTimer:autoRefresh];
     }
+    [adView retain];
+    adView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self addSubview:adView];
 }
 -(void)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds {
@@ -62,6 +61,7 @@
 #pragma mark-
 #pragma mark Public API
 -(void)refresh:(id)args {
+    NSLog(@"refresh called");
     [adView refreshAd];
 }
 
