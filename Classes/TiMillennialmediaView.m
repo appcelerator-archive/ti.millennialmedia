@@ -11,30 +11,38 @@
 
 #pragma mark -
 #pragma mark Lifecycle and View Management
+
 -(void)createView {
     bool autoLoad = [TiUtils boolValue:[self.proxy valueForKey:@"autoLoad"] def:YES];
-    bool autoRefresh = [TiUtils boolValue:[self.proxy valueForKey:@"autoRefresh"] def:YES];
     int type = [TiUtils intValue:[self.proxy valueForKey:@"type"] def:MMBannerAdTop];
     if (type == MMFullScreenAdLaunch || type == MMFullScreenAdTransition) {
-        adView = [MMAdView interstitialWithType:type
+        adView = [[MMAdView interstitialWithType:type
                                            apid:[TiMillennialmediaModule retrieveAPID]
                                        delegate:self
-                                         loadAd:autoLoad];
+                                         loadAd:autoLoad] retain];
+        adView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        [self addSubview:adView];
     }
-    else {
-        adView = [MMAdView adWithFrame:self.frame
+}
+-(void)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds {
+    int type = [TiUtils intValue:[self.proxy valueForKey:@"type"] def:MMBannerAdTop];
+    if (type == MMBannerAdTop || type == MMBannerAdBottom || type == MMBannerAdRectangle) {
+        if (adView != nil) {
+            [adView disableAdRefresh];
+            [adView removeFromSuperview];
+            RELEASE_TO_NIL(adView);
+        }
+        bool autoLoad = [TiUtils boolValue:[self.proxy valueForKey:@"autoLoad"] def:YES];
+        bool autoRefresh = [TiUtils boolValue:[self.proxy valueForKey:@"autoRefresh"] def:YES];
+        adView = [[MMAdView adWithFrame:bounds
                                   type:type
                                   apid:[TiMillennialmediaModule retrieveAPID]
                               delegate:self
                                 loadAd:autoLoad
-                            startTimer:autoRefresh];
+                             startTimer:autoRefresh] retain];
+        adView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        [self addSubview:adView];
     }
-    [adView retain];
-    adView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    [self addSubview:adView];
-}
--(void)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds {
-    [TiUtils setView:adView positionRect:bounds];
 }
 -(void)dealloc {
     if (adView != nil) {
@@ -61,7 +69,6 @@
 #pragma mark-
 #pragma mark Public API
 -(void)refresh:(id)args {
-    NSLog(@"refresh called");
     [adView refreshAd];
 }
 

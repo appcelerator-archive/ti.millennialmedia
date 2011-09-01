@@ -12,6 +12,10 @@ WARNING: You must set the "apid" property of Ti.MillennialMedia before you can d
 Controls the type of ad that will be displayed to the user. Look at the constants available on [Ti.MillennialMedia][] to
 see what you can set here.
 
+WARNING: when using launch and transition type ads, you do not need to size them; they'll take over the full view of your
+app while they are displayed. It is very important that you listen for "fail" and "modalWasDismissed" to remove the ad
+from the window after the user is done with it.
+
 ### autoRefresh [bool, defaults to true]
 Whether or not the ad should auto refresh. Use the "refreshDuration" property to control how often this happens.
 
