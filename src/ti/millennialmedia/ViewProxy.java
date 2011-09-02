@@ -15,13 +15,23 @@ import android.app.Activity;
 @Kroll.proxy(creatableInModule = MillennialmediaModule.class)
 public class ViewProxy extends TiViewProxy {
 
+	private UIView _view;
+
 	public ViewProxy(TiContext tiContext) {
 		super(tiContext);
 	}
 
 	@Override
 	public TiUIView createView(Activity activity) {
-		return new UIView(this, activity);
+		_view = new UIView(this, activity);
+		return _view;
 	}
-	
+
+	@Kroll.method(runOnUiThread=true)
+	public void refresh() {
+		if (_view != null) {
+			_view.refresh();
+		}
+	}
+
 }
