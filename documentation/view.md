@@ -16,6 +16,10 @@ WARNING: when using launch and transition type ads, you do not need to size them
 app while they are displayed. It is very important that you listen for "fail" and "modalWasDismissed" to remove the ad
 from the window after the user is done with it.
 
+Also note that "launch" ads may not display immediately. If the server responds with a cached ad that the client does not
+have yet, it will download it so it can be used for launch ads in the future. The result is you may not see ads the first
+couple of times the app is launched, but they will show up more regularly as the user uses the app.
+
 ### autoRefresh [bool, defaults to true]
 Whether or not the ad should auto refresh. Use the "refreshDuration" property to control how often this happens.
 
