@@ -1,5 +1,11 @@
 # Ti.MillennialMedia Module
 
+## WARNING
+
+Ads won't show up in the Android Emulator 2.3, and using the module may crash the app. This is due to a bug in the
+Android emulator that has been fixed in later versions, and is not present in earlier versions. Real devices running
+Android 2.3 will not have this problem.
+
 ## Description
 
 Mobile Advertising with Millennial Media. Partner with the largest and highest quality mobile advertising network to
