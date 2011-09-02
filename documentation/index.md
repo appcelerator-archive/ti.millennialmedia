@@ -26,11 +26,21 @@ Your APID from Millennial Media. This is shown on the "My Apps" > "Manage Apps" 
 Demographic information about the current user, such as their age gender and location. Any ads you display will use
 this information. This is a dictionary with any of the following properties:
 
-* zip [string]
-* age [string]
-* gender [string, "male" or "female"]
-* lat [string]
-* long [string]
+* age [string]: in years (e.g. 18) or an age
+* gender [string]: "male", "female", or "unknown"
+* zip [string]: 5 digit US zip code
+* marital [string]: Marital status, options are: "single", "divorced", "engaged", "relationship", or "swinger"
+* income [string]: e.g. 65000
+* lat [string]: latitude
+* long [string]: longitude
+* ethnicity [string]: Options are: "hispanic", "africanamerican", "asian", "indian", "middleeastern", "nativeamerican", "pacificislander", "white", or "other"
+* orientation [string]: Sexual orientation, options are: "straight", "gay", "bisexual", or "notsure"
+* education [string]: Highest level of education, options are: "highschool", "somecollege", "associate", "bachelor", "masters", "phd", or "professional"
+* politics [string]: Political orientation.
+* keywords [string]: Any additional relevant description of the user or their preferences separated by commas. e.g. "soccer,scores,basketball"
+* children [string]: Any boolean value e.g. "yes", "no", "true", "false".
+* width [string]: The width of the ad if you have a limit on the size of ads you can display, e.g. 320. This should only be used if you have a specific limitation on the size of ads you can display. If not used, the ad returned will be optimized based on device specifications.
+* height [string]: The height of the ad if you have a limit on the size of ads you can display, e.g. 53. This should only be used if you have a specific limitation on the size of ads you can display. If not used, the ad returned will be optimized based on device specifications.
 
 ## Methods
 

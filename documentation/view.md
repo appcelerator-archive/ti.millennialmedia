@@ -21,7 +21,7 @@ Whether or not the ad should auto refresh. Use the "refreshDuration" property to
 
 ### refreshDuration [int, defaults to 60]
 The number of seconds to wait before auto refreshing the ad. If "autoRefresh" is false, this property will not do
-anything.
+anything. Must be at least 30 seconds.
 
 ### autoLoad [bool, defaults to true]
 Whether or not the ad should load as soon as it is added to the view hierarchy. Note that if you set this to false, no

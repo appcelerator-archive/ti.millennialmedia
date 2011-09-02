@@ -8,7 +8,7 @@ Ti.MillennialMedia.demographics = {
     age: '23',
     gender: 'male',
     zip: '60187',
-    lat: '41.866', long: '-88.107'
+    lat: '41.866', 'long': '-88.107'
 };
 
 var win = Ti.UI.createWindow({
