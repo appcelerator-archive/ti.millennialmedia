@@ -11,7 +11,7 @@ import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.titanium.util.TiConfig;
 
 public class Constants {
-	public static final String LCAT = "BrightcoveModule";
+	public static final String LCAT = "MillennialmediaModule";
 	public static final boolean DBG = TiConfig.LOGD;
 
 	private static String _apid;
