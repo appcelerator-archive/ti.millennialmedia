@@ -7,8 +7,8 @@ var transitionDemoButton = Ti.UI.createButton({
     height: 35
 });
 transitionDemoButton.addEventListener('click', function() {
-    var transition = Ti.MillennialMedia.createView({
-        type: Ti.MillennialMedia.TYPE_TRANSITION
+    var transition = MillennialMedia.createView({
+        type: MillennialMedia.TYPE_TRANSITION
     });
     transition.addEventListener('fail', function() {
         Ti.API.info('fail fired!');
