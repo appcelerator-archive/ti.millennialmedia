@@ -21,7 +21,7 @@ until after this property is set.
 
 To access this module from JavaScript, you would do the following:
 
-	Titanium.MillennialMedia = Ti.MillennialMedia = require("ti.millennialmedia");
+	var MillennialMedia = require('ti.millennialmedia');
 
 ## Properties
 

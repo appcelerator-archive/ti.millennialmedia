@@ -2,9 +2,9 @@
  * This example demonstrates a couple of different ads that you can display from Millennial Media.
  * We'll look at five different types of ads.
  */
-Titanium.MillennialMedia = Ti.MillennialMedia = require("ti.millennialmedia");
-Ti.MillennialMedia.apid = '54131';
-Ti.MillennialMedia.demographics = {
+var MillennialMedia = require('ti.millennialmedia');
+MillennialMedia.apid = '54131';
+MillennialMedia.demographics = {
     age: '23',
     gender: 'male',
     zip: '60187',
