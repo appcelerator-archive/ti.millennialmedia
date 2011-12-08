@@ -5,7 +5,6 @@
  */
 package ti.millennialmedia;
 
-import org.appcelerator.titanium.TiContext;
 import org.appcelerator.titanium.proxy.TiViewProxy;
 import org.appcelerator.titanium.view.TiUIView;
 import org.appcelerator.kroll.annotations.Kroll;
@@ -17,8 +16,8 @@ public class ViewProxy extends TiViewProxy {
 
 	private UIView _view;
 
-	public ViewProxy(TiContext tiContext) {
-		super(tiContext);
+	public ViewProxy() {
+		super();
 	}
 
 	@Override

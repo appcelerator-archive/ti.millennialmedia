@@ -8,14 +8,14 @@ package ti.millennialmedia;
 import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
-import org.appcelerator.titanium.TiContext;
+import org.appcelerator.titanium.TiApplication;
 
 import com.millennialmedia.android.MMAdView;
 
 @Kroll.module(name = "Millennialmedia", id = "ti.millennialmedia")
 public class MillennialmediaModule extends KrollModule {
-	public MillennialmediaModule(TiContext tiContext) {
-		super(tiContext);
+	public MillennialmediaModule() {
+		super();
 	}
 
 	@Kroll.setProperty
@@ -30,7 +30,7 @@ public class MillennialmediaModule extends KrollModule {
 
 	@Kroll.method
 	public void trackGoal(String goal) {
-		MMAdView.startConversionTrackerWithGoalId(context.getAndroidContext(),
+		MMAdView.startConversionTrackerWithGoalId(TiApplication.getInstance().getApplicationContext(),
 				goal);
 	}
 
