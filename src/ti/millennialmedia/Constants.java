@@ -6,6 +6,7 @@
 package ti.millennialmedia;
 
 import java.util.Hashtable;
+import java.util.HashMap;
 
 import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.titanium.util.TiConfig;
@@ -26,8 +27,8 @@ public class Constants {
 
 	private static KrollDict _demographics;
 
-	public static void setDemographics(KrollDict val) {
-		_demographics = val;
+	public static void setDemographics(HashMap val) {
+		_demographics = new KrollDict(val);
 	}
 
 	public static Hashtable<String, String> getDemographicsAsHashTable() {

@@ -12,6 +12,8 @@ import org.appcelerator.titanium.TiApplication;
 
 import com.millennialmedia.android.MMAdView;
 
+import java.util.HashMap;
+
 @Kroll.module(name = "Millennialmedia", id = "ti.millennialmedia")
 public class MillennialmediaModule extends KrollModule {
 	public MillennialmediaModule() {
@@ -24,7 +26,7 @@ public class MillennialmediaModule extends KrollModule {
 	}
 
 	@Kroll.setProperty
-	public void setDemographics(KrollDict val) {
+	public void setDemographics(HashMap val) {
 		Constants.setDemographics(val);
 	}
 
