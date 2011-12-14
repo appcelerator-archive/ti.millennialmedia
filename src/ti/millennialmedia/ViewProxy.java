@@ -31,21 +31,23 @@ public class ViewProxy extends TiViewProxy {
 		return _view;
 	}
 
-	private Handler handler = new Handler(TiMessenger.getMainMessenger().getLooper(), this);
     private static final int MSG_REFRESH = 50000;
 
-	public boolean handleMessage(Message msg)
+	private final Handler handler = new Handler(TiMessenger.getMainMessenger().getLooper(), new Handler.Callback ()
 	{
-	    switch (msg.what) {
-	        case MSG_REFRESH: {
-	            AsyncResult result = (AsyncResult) msg.obj;
-                handleRefresh();
-	            result.setResult(null);
-	            return true;
-	        }
-	    }
-	    return false;
-	}
+    	public boolean handleMessage(Message msg)
+        {
+            switch (msg.what) {
+                case MSG_REFRESH: {
+                    AsyncResult result = (AsyncResult) msg.obj;
+                    handleRefresh();
+                    result.setResult(null);
+                    return true;
+                }
+            }
+            return false;
+        }
+	});
 
 	private void handleRefresh()
 	{
