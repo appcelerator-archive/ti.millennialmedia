@@ -11,6 +11,11 @@ Note: you will need to have an account with Millennial Media. You can sign up fo
 WARNING: The first thing you should do is set the "apid" property of this module! You won't be able to display any ads
 until after this property is set.
 
+## Getting Started
+
+View the [Configuring Apps to Use Modules](https://wiki.appcelerator.org/display/guides/Configuring+Apps+to+Use+Modules) page for instructions on getting
+started with using this module in your application.
+
 ## Accessing the Ti.MillennialMedia Module
 
 To access this module from JavaScript, you would do the following:
