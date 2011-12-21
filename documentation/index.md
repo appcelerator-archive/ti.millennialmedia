@@ -17,6 +17,16 @@ Note: you will need to have an account with Millennial Media. You can sign up fo
 WARNING: The first thing you should do is set the "apid" property of this module! You won't be able to display any ads
 until after this property is set.
 
+## Getting Started
+
+View the [Configuring Apps to Use Modules](https://wiki.appcelerator.org/display/guides/Configuring+Apps+to+Use+Modules) page for instructions on getting
+started with using this module in your application.
+
+Note that there may be two versions of this module available to you, one for use with pre-1.8.0.1 SDKs and one for use with 1.8.0.1 or newer.
+In your tiapp.xml file, make sure that you specify the version of the module that corresponds to the version of Titanium Mobile SDK that you are targeting.
+For Appcelerator modules, specify the 1.X version of the module if building for versions of Titanium Mobile SDK prior to 1.8.0.1 and specify the 2.X version of the module if
+building for versions of Titanium Mobile SDK 1.8.0.1 or newer.
+
 ## Accessing the Ti.MillennialMedia Module
 
 To access this module from JavaScript, you would do the following:
