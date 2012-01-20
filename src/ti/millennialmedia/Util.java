@@ -5,7 +5,7 @@
  */
 package ti.millennialmedia;
 
-import org.appcelerator.titanium.util.Log;
+import org.appcelerator.kroll.common.Log;
 
 /**
  * Holds various static methods that we will use throughout the module.

@@ -9,7 +9,7 @@ import java.util.Hashtable;
 import java.util.HashMap;
 
 import org.appcelerator.kroll.KrollDict;
-import org.appcelerator.titanium.util.TiConfig;
+import org.appcelerator.kroll.common.TiConfig;
 
 public class Constants {
 	public static final String LCAT = "MillennialmediaModule";
