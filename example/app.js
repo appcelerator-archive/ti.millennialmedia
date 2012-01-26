@@ -3,7 +3,6 @@
  * We'll look at five different types of ads.
  */
 var MillennialMedia = require('ti.millennialmedia');
-MillennialMedia.apid = '54128';
 MillennialMedia.demographics = {
     age: '23',
     gender: 'male',

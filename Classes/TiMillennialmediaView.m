@@ -17,7 +17,7 @@
     int type = [TiUtils intValue:[self.proxy valueForKey:@"type"] def:MMBannerAdTop];
     if (type == MMFullScreenAdLaunch || type == MMFullScreenAdTransition) {
         adView = [[MMAdView interstitialWithType:type
-                                           apid:[TiMillennialmediaModule retrieveAPID]
+                                            apid:[TiUtils stringValue:[self.proxy valueForKey:@"apid"]]
                                        delegate:self
                                          loadAd:autoLoad] retain];
         adView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
@@ -28,7 +28,6 @@
     int type = [TiUtils intValue:[self.proxy valueForKey:@"type"] def:MMBannerAdTop];
     if (type == MMBannerAdTop || type == MMBannerAdBottom || type == MMBannerAdRectangle) {
         if (adView != nil) {
-            [adView disableAdRefresh];
             [adView removeFromSuperview];
             RELEASE_TO_NIL(adView);
         }
@@ -36,7 +35,7 @@
         bool autoRefresh = [TiUtils boolValue:[self.proxy valueForKey:@"autoRefresh"] def:YES];
         adView = [[MMAdView adWithFrame:bounds
                                   type:type
-                                  apid:[TiMillennialmediaModule retrieveAPID]
+                                  apid:[TiUtils stringValue:[self.proxy valueForKey:@"apid"]]
                               delegate:self
                                 loadAd:autoLoad
                              startTimer:autoRefresh] retain];
@@ -46,7 +45,6 @@
 }
 -(void)dealloc {
     if (adView != nil) {
-        [adView disableAdRefresh];
         [adView removeFromSuperview];
         RELEASE_TO_NIL(adView);
     }
@@ -92,6 +90,10 @@
 
 - (void)adRequestIsCaching:(MMAdView *) adView {
     [self.proxy fireEvent:@"isCaching" withObject:nil];
+}
+
+- (void)adRequestFinishedCaching:(MMAdView *) adView successful: (BOOL) didSucceed {
+    [self.proxy fireEvent:@"cached" withObject:nil];
 }
 
 - (void)applicationWillTerminateFromAd {

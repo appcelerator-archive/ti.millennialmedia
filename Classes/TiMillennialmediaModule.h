@@ -12,7 +12,6 @@
 {
 }
 
-+(NSString*)retrieveAPID;
 +(NSDictionary*)retrieveDemographics;
 
 -(void)trackGoal:(NSString*)goal;

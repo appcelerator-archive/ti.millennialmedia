@@ -8,6 +8,7 @@ var transitionDemoButton = Ti.UI.createButton({
 });
 transitionDemoButton.addEventListener('click', function() {
     var transition = MillennialMedia.createView({
+        apid: '54196',
         type: MillennialMedia.TYPE_TRANSITION
     });
     transition.addEventListener('fail', function() {
