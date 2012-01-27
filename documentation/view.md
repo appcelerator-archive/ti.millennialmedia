@@ -8,6 +8,9 @@ WARNING: You must set the "apid" property of Ti.MillennialMedia before you can d
 
 ## Properties
 
+### apid [string, required]
+Your APID from Millennial Media for this ad's placement. This is shown on the on developer.millennialmedia.com.
+
 ### type [int, defaults to TYPE_TOP]
 Controls the type of ad that will be displayed to the user. Look at the constants available on [Ti.MillennialMedia][] to
 see what you can set here.

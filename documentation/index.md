@@ -8,9 +8,6 @@ build brand awareness, target mobile users, and acquire new customers.
 Note: you will need to have an account with Millennial Media. You can sign up for one at the following URL:
 	https://developer.millennialmedia.com
 
-WARNING: The first thing you should do is set the "apid" property of this module! You won't be able to display any ads
-until after this property is set.
-
 ## Getting Started
 
 View the [Using Titanium Modules](https://wiki.appcelerator.org/display/tis/Using+Titanium+Modules) document for instructions on getting
@@ -23,9 +20,6 @@ To access this module from JavaScript, you would do the following:
 	var MillennialMedia = require('ti.millennialmedia');
 
 ## Properties
-
-### apid [string]
-Your APID from Millennial Media. This is shown on the "My Apps" > "Manage Apps" page on developer.millennialmedia.com.
 
 ### demographics [object]
 Demographic information about the current user, such as their age gender and location. Any ads you display will use

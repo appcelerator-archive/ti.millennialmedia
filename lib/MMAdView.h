@@ -6,6 +6,7 @@
 
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @protocol MMAdDelegate;
 
@@ -56,27 +57,34 @@ typedef enum AdType {
 + (NSString *) version;
 
 /**
+ * Updates the location used for ad requests
+ */
++ (void) updateLocation: (CLLocation *) currentLocation;
+
+/**
  * Will load a new ad. 
  * If MMAdView was created with loadAdImmediately set to NO, refereshAd must be called everytime to get a new ad.
  */
 
 - (void) refreshAd;
 
-	
-	
 /**
- * DEPRICATED METHODS
- * These methods will be removed in a future release.
+ * Requests an ad and caches it for display at a later time.
+ * Returns YES is a fetch was made, NO if was unable to or an ad had already been fetched.
  */
-	
-+ (MMAdView *) adWithFrame:(CGRect)frame type:(MMAdType) type apid: (NSString *) apid delegate: (id<MMAdDelegate>)delegate;
+- (BOOL) fetchAdToCache;
 
-- (void) startConversionTrackerWithGoalId: (NSString *) goalid;
+/**
+ * Checks for a cached ad 
+ * Returns YES if an ad is available or display, otherwise returns NO
+ */
+- (BOOL) checkForCachedAd;
 
-- (void)enableAdRefresh;
-
-- (void)disableAdRefresh;
-	
+/**
+ * Displays a ad cached using the fetchAdToCache method
+ * Returns YES if an ad will display, otherwise returns NO.
+ */
+- (BOOL) displayCachedAd;
 	
 
 @end
@@ -108,6 +116,7 @@ typedef enum AdType {
 - (void)adWasTapped:(MMAdView *) adView;
 
 - (void)adRequestIsCaching:(MMAdView *) adView;
+- (void)adRequestFinishedCaching:(MMAdView *) adView successful: (BOOL) didSucceed;
 
 - (void)applicationWillTerminateFromAd;
 
