@@ -3,16 +3,15 @@
  * We'll look at five different types of ads.
  */
 var MillennialMedia = require('ti.millennialmedia');
-MillennialMedia.apid = '54128';
 MillennialMedia.demographics = {
-    age: '23',
-    gender: 'male',
-    zip: '60187',
-    lat: '41.866', 'long': '-88.107'
+    age:'23',
+    gender:'male',
+    zip:'60187',
+    lat:'41.866', 'long':'-88.107'
 };
 
 var win = Ti.UI.createWindow({
-    backgroundColor: 'white'
+    backgroundColor:'white'
 });
 /**
  * To keep this demo easy to understand, I have split the different types of ads in to their

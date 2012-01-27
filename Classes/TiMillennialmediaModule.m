@@ -55,20 +55,6 @@
 #pragma mark -
 #pragma mark Properties and Public API
 
-static NSString* apid;
-+(NSString*)retrieveAPID
-{
-    return apid;
-}
--(void)setApid:(id)arg
-{
-    ENSURE_SINGLE_ARG(arg, NSString);
-    if (apid) {
-        [apid release];
-    }
-    apid = [arg retain];
-}
-
 static NSDictionary* demographics;
 +(NSDictionary*)retrieveDemographics
 {

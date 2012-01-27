@@ -3,13 +3,14 @@
  * events that are available.
  */
 var bottom = MillennialMedia.createView({
-    bottom: 0, left: 0, right: 0,
-    height: 53,
-    type: MillennialMedia.TYPE_BOTTOM
+    apid:'54197',
+    bottom:0, left:0, right:0,
+    height:53,
+    type:MillennialMedia.TYPE_BOTTOM
 });
 
 function curryEventHandler(type) {
-    return function() {
+    return function () {
         Ti.API.info(type + ' fired!');
     }
 }
