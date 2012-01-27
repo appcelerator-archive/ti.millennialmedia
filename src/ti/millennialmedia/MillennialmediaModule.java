@@ -5,7 +5,6 @@
  */
 package ti.millennialmedia;
 
-import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.titanium.TiApplication;
@@ -21,11 +20,7 @@ public class MillennialmediaModule extends KrollModule {
 	}
 
 	@Kroll.setProperty
-	public void setApid(String val) {
-		Constants.setApid(val);
-	}
-
-	@Kroll.setProperty
+	@SuppressWarnings("rawtypes")
 	public void setDemographics(HashMap val) {
 		Constants.setDemographics(val);
 	}

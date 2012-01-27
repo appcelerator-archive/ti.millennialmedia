@@ -3,7 +3,8 @@
  * see the rest of your app.
  */
 var launch = MillennialMedia.createView({
-    type: MillennialMedia.TYPE_LAUNCH
+    apid:'54139',
+    type:MillennialMedia.TYPE_LAUNCH
 });
 launch.addEventListener('fail', function () {
     Ti.API.info('fail fired!');

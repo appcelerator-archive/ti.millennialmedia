@@ -14,7 +14,6 @@ import android.app.Activity;
 
 import com.millennialmedia.android.MMAdView;
 import com.millennialmedia.android.MMAdView.MMAdListener;
-import com.millennialmedia.android.MMAdViewSDK;
 
 public class UIView extends TiUIView {
 
@@ -33,18 +32,14 @@ public class UIView extends TiUIView {
 		Boolean autoLoad = args.optBoolean("autoLoad", true);
 		Boolean autoRefresh = args.optBoolean("autoRefresh", true);
 		int refreshDuration = args.optInt("refreshDuration", 60);
-		/*
-		 * Boolean accelerometerEnabled =
-		 * args.optBoolean("accelerometerEnabled", true);
-		 */
+		String apid = args.getString("apid");
 		String type = args.optString("type", MMAdView.BANNER_AD_TOP);
 
-		_adView = new MMAdView(_activity, Constants.getApid(), type,
+		_adView = new MMAdView(_activity, apid, type,
 				autoLoad ? (autoRefresh ? refreshDuration : 0)
 						: MMAdView.REFRESH_INTERVAL_OFF);
 		_adView.setIgnoresDensityScaling(args.optBoolean(
 				"ignoreDensityScaling", true));
-		_adView.setId(MMAdViewSDK.DEFAULT_VIEWID);
 
 		Hashtable<String, String> demographics = Constants
 				.getDemographicsAsHashTable();
@@ -105,6 +100,11 @@ public class UIView extends TiUIView {
 		public void MMAdClickedToNewBrowser(MMAdView arg) {
 			proxy.fireEvent("willTerminate", null);
 
+		}
+
+		@Override
+		public void MMAdCachingCompleted(MMAdView arg0, boolean arg1) {
+			proxy.fireEvent("cached", null);
 		}
 	}
 

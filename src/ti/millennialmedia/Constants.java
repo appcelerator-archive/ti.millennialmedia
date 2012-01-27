@@ -27,6 +27,7 @@ public class Constants {
 
 	private static KrollDict _demographics;
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void setDemographics(HashMap val) {
 		_demographics = new KrollDict(val);
 	}
