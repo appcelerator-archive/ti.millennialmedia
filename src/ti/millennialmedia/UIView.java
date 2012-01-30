@@ -14,6 +14,7 @@ import android.app.Activity;
 
 import com.millennialmedia.android.MMAdView;
 import com.millennialmedia.android.MMAdView.MMAdListener;
+import com.millennialmedia.android.MMAdViewSDK;
 
 public class UIView extends TiUIView {
 
@@ -40,6 +41,7 @@ public class UIView extends TiUIView {
 						: MMAdView.REFRESH_INTERVAL_OFF);
 		_adView.setIgnoresDensityScaling(args.optBoolean(
 				"ignoreDensityScaling", true));
+		_adView.setId(MMAdViewSDK.DEFAULT_VIEWID);
 
 		Hashtable<String, String> demographics = Constants
 				.getDemographicsAsHashTable();
