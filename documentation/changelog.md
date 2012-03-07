@@ -1,5 +1,7 @@
 # Change Log
 <pre>
+v2.2	Fixed bug with presenting full screen launch and transition ads [MOD-527]
+
 v2.1	Upgraded to SDK 4.5
 
 v2.0	Upgraded to module api version 2 for 1.8.0.1

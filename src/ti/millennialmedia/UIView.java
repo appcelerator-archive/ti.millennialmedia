@@ -50,12 +50,9 @@ public class UIView extends TiUIView {
 		}
 
 		_adView.setListener(new UIViewListener());
+		setNativeView(_adView);
 
-		if (type.equals(MMAdView.BANNER_AD_TOP)
-				|| type.equals(MMAdView.BANNER_AD_BOTTOM)
-				|| type.equals(MMAdView.BANNER_AD_RECTANGLE)) {
-			setNativeView(_adView);
-		} else {
+		if (!type.equals(MMAdView.BANNER_AD_TOP) && !type.equals(MMAdView.BANNER_AD_BOTTOM) && !type.equals(MMAdView.BANNER_AD_RECTANGLE)) {
 			if (autoLoad) {
 				_adView.callForAd();
 			}
