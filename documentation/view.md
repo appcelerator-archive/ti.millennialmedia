@@ -79,7 +79,7 @@ Occurs just before a modal ad is shown to the user.
 ### modalDidAppear
 Occurs after a modal ad is shown to the user.
 
-### modalWasDismissed
+### modalWasDismissed [iOS only]
 Occurs after the user dismisses a modal ad.
 
 [Ti.MillennialMedia]: index.html
