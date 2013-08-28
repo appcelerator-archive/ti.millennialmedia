@@ -7,6 +7,8 @@
 #import "TiMillennialmediaViewProxy.h"
 #import "TiUtils.h"
 
+#import "MMInterstitial.h"
+
 @implementation TiMillennialmediaViewProxy
 
 -(void)viewDidAttach
@@ -21,6 +23,21 @@
 		[self makeViewPerformSelector:@selector(methodname:) withObject:args createIfNeeded:YES waitUntilDone:NO];\
 	}
 #endif
+
+USE_VIEW_FOR_UI_METHOD(display);
 USE_VIEW_FOR_UI_METHOD(refresh);
+
+#pragma mark -
+#pragma mark Public API
+
+-(id)isAdAvailable:(id)args
+{
+    if ([self.view adType] != TiMMInterstitial) {
+        NSLog(@"[WARN] The `isAdAvailable` method is only for Interstitial ads.");
+        return NUMBOOL(NO);
+    }
+    
+    return NUMBOOL([MMInterstitial isAdAvailableForApid:[TiUtils stringValue:[self valueForKey:@"apid"]]]);
+}
 
 @end

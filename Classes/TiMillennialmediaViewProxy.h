@@ -10,6 +10,4 @@
 @interface TiMillennialmediaViewProxy : TiViewProxy {
 }
 
--(void)refresh:(id)args;
-
 @end

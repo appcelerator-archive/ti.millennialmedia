@@ -26,14 +26,17 @@
 		24DD6CFA1134B3F500162E58 /* TiMillennialmediaModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* TiMillennialmediaModule.m */; };
 		24DE9E1111C5FE74003F90F6 /* TiMillennialmediaModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* TiMillennialmediaModuleAssets.h */; };
 		24DE9E1211C5FE74003F90F6 /* TiMillennialmediaModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* TiMillennialmediaModuleAssets.m */; };
-		A89DCF0E140D678C001A3993 /* libMMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A89DCF0B140D678C001A3993 /* libMMSDK.a */; };
-		A89DCF0F140D678C001A3993 /* MMAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = A89DCF0C140D678C001A3993 /* MMAdView.h */; };
 		A89DCF1D140D68E7001A3993 /* TiMillennialmediaView.h in Headers */ = {isa = PBXBuildFile; fileRef = A89DCF1B140D68E7001A3993 /* TiMillennialmediaView.h */; };
 		A89DCF1E140D68E7001A3993 /* TiMillennialmediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = A89DCF1C140D68E7001A3993 /* TiMillennialmediaView.m */; };
 		A89DCF21140D694F001A3993 /* TiMillennialmediaViewProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A89DCF1F140D694F001A3993 /* TiMillennialmediaViewProxy.h */; };
 		A89DCF22140D694F001A3993 /* TiMillennialmediaViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A89DCF20140D694F001A3993 /* TiMillennialmediaViewProxy.m */; };
 		AA747D9F0F9514B9006C5449 /* TiMillennialmedia_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TiMillennialmedia_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		CE545B1D17BE984100FAD892 /* libMMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE545B1717BE984100FAD892 /* libMMSDK.a */; };
+		CE545B1E17BE984100FAD892 /* MMAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = CE545B1817BE984100FAD892 /* MMAdView.h */; };
+		CE545B1F17BE984100FAD892 /* MMInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = CE545B1917BE984100FAD892 /* MMInterstitial.h */; };
+		CE545B2017BE984100FAD892 /* MMRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = CE545B1A17BE984100FAD892 /* MMRequest.h */; };
+		CE545B2117BE984100FAD892 /* MMSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = CE545B1B17BE984100FAD892 /* MMSDK.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +55,6 @@
 		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
 		24DE9E0F11C5FE74003F90F6 /* TiMillennialmediaModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMillennialmediaModuleAssets.h; path = Classes/TiMillennialmediaModuleAssets.h; sourceTree = "<group>"; };
 		24DE9E1011C5FE74003F90F6 /* TiMillennialmediaModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMillennialmediaModuleAssets.m; path = Classes/TiMillennialmediaModuleAssets.m; sourceTree = "<group>"; };
-		A89DCF0B140D678C001A3993 /* libMMSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMMSDK.a; sourceTree = "<group>"; };
-		A89DCF0C140D678C001A3993 /* MMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAdView.h; sourceTree = "<group>"; };
-		A89DCF0D140D678C001A3993 /* version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = version; sourceTree = "<group>"; };
 		A89DCF11140D67D9001A3993 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		A89DCF13140D685C001A3993 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A89DCF15140D6865001A3993 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -66,6 +66,12 @@
 		A89DCF20140D694F001A3993 /* TiMillennialmediaViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMillennialmediaViewProxy.m; path = Classes/TiMillennialmediaViewProxy.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* TiMillennialmedia_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiMillennialmedia_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CE545B1717BE984100FAD892 /* libMMSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMMSDK.a; sourceTree = "<group>"; };
+		CE545B1817BE984100FAD892 /* MMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAdView.h; sourceTree = "<group>"; };
+		CE545B1917BE984100FAD892 /* MMInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInterstitial.h; sourceTree = "<group>"; };
+		CE545B1A17BE984100FAD892 /* MMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRequest.h; sourceTree = "<group>"; };
+		CE545B1B17BE984100FAD892 /* MMSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSDK.h; sourceTree = "<group>"; };
+		CE545B1C17BE984100FAD892 /* version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = version; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libTiMillennialmedia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTiMillennialmedia.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -75,7 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
-				A89DCF0E140D678C001A3993 /* libMMSDK.a in Frameworks */,
+				CE545B1D17BE984100FAD892 /* libMMSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,9 +99,9 @@
 		0867D691FE84028FC02AAC07 /* millennialmedia */ = {
 			isa = PBXGroup;
 			children = (
+				CE545B1617BE984100FAD892 /* MMSDK */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
-				A89DCF0A140D678C001A3993 /* lib */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
@@ -139,14 +145,17 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
-		A89DCF0A140D678C001A3993 /* lib */ = {
+		CE545B1617BE984100FAD892 /* MMSDK */ = {
 			isa = PBXGroup;
 			children = (
-				A89DCF0B140D678C001A3993 /* libMMSDK.a */,
-				A89DCF0C140D678C001A3993 /* MMAdView.h */,
-				A89DCF0D140D678C001A3993 /* version */,
+				CE545B1717BE984100FAD892 /* libMMSDK.a */,
+				CE545B1817BE984100FAD892 /* MMAdView.h */,
+				CE545B1917BE984100FAD892 /* MMInterstitial.h */,
+				CE545B1A17BE984100FAD892 /* MMRequest.h */,
+				CE545B1B17BE984100FAD892 /* MMSDK.h */,
+				CE545B1C17BE984100FAD892 /* version */,
 			);
-			path = lib;
+			path = MMSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,9 +168,12 @@
 				AA747D9F0F9514B9006C5449 /* TiMillennialmedia_Prefix.pch in Headers */,
 				24DD6CF91134B3F500162E58 /* TiMillennialmediaModule.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* TiMillennialmediaModuleAssets.h in Headers */,
-				A89DCF0F140D678C001A3993 /* MMAdView.h in Headers */,
 				A89DCF1D140D68E7001A3993 /* TiMillennialmediaView.h in Headers */,
 				A89DCF21140D694F001A3993 /* TiMillennialmediaViewProxy.h in Headers */,
+				CE545B1E17BE984100FAD892 /* MMAdView.h in Headers */,
+				CE545B1F17BE984100FAD892 /* MMInterstitial.h in Headers */,
+				CE545B2017BE984100FAD892 /* MMRequest.h in Headers */,
+				CE545B2117BE984100FAD892 /* MMSDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +277,11 @@
 				"ARCHS[sdk=iphonesimulator*]" = i386;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/TiMillennialmedia.dst;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiMillennialmedia_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_VERSION = "";
@@ -277,27 +293,24 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TiMillennialmedia_Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/lib\"",
+					"\"$(SRCROOT)/MMSDK\"",
 				);
-				PRODUCT_NAME = "TiMillennialmedia";
 				OTHER_CFLAGS = (
 					"-DDEBUG",
 					"-DTI_POST_1_2",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = TiMillennialmedia;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";
-				DSTROOT = "/tmp/TiMillennialmedia.dst";
 			};
 			name = Debug;
 		};
@@ -305,6 +318,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = (
 					armv6,
 					armv7,
@@ -314,7 +328,11 @@
 					armv7,
 				);
 				"ARCHS[sdk=iphonesimulator*]" = i386;
+				DSTROOT = /tmp/TiMillennialmedia.dst;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiMillennialmedia_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_VERSION = "";
@@ -326,26 +344,20 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TiMillennialmedia_Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/lib\"",
+					"\"$(SRCROOT)/MMSDK\"",
 				);
-				PRODUCT_NAME = "TiMillennialmedia";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DTI_POST_1_2";
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PRODUCT_NAME = TiMillennialmedia;
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				DSTROOT = "/tmp/TiMillennialmedia.dst";
 			};
 			name = Release;
 		};
@@ -364,7 +376,11 @@
 				"ARCHS[sdk=iphonesimulator*]" = i386;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/TiMillennialmedia.dst;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiMillennialmedia_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_VERSION = "";
@@ -376,22 +392,18 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TiMillennialmedia_Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
-				PRODUCT_NAME = "TiMillennialmedia";
 				OTHER_CFLAGS = (
 					"-DDEBUG",
 					"-DTI_POST_1_2",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = TiMillennialmedia;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";
-				DSTROOT = "/tmp/TiMillennialmedia.dst";
 			};
 			name = Debug;
 		};
@@ -399,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = (
 					armv6,
 					armv7,
@@ -408,7 +421,11 @@
 					armv7,
 				);
 				"ARCHS[sdk=iphonesimulator*]" = i386;
+				DSTROOT = /tmp/TiMillennialmedia.dst;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiMillennialmedia_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_VERSION = "";
@@ -420,21 +437,14 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TiMillennialmedia_Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
-				PRODUCT_NAME = "TiMillennialmedia";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DTI_POST_1_2";
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PRODUCT_NAME = TiMillennialmedia;
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				DSTROOT = "/tmp/TiMillennialmedia.dst";
 			};
 			name = Release;
 		};

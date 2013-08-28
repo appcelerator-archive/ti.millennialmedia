@@ -2,8 +2,11 @@
  * Next, an ad at the top of your app.
  */
 win.add(MillennialMedia.createView({
-    apid:'54128',
-    top:0, left:0, right:0,
-    height:53,
-    type:MillennialMedia.TYPE_TOP
+    apid: '123210',
+    top: 0,
+    // For an iPad size banner the view should be 728 x 90
+    // For an iPhone size banner the view should be 320 x 50
+    width: IPAD ? 728 : 320,
+    height: IPAD ? 90 : 50,
+    adType: MillennialMedia.TYPE_BANNER
 }));

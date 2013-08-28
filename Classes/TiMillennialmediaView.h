@@ -8,12 +8,11 @@
 #import "MMAdView.h"
 #import "TiMillennialmediaModule.h"
 
-@interface TiMillennialmediaView : TiUIView<MMAdDelegate> {
-    MMAdView *adView;
+@interface TiMillennialmediaView : TiUIView {
+    MMAdView *adView_;
 }
 
 -(void)createView;
-
--(void)refresh:(id)args;
+-(int)adType;
 
 @end

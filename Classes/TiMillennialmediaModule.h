@@ -8,18 +8,28 @@
 #import "TiApp.h"
 #import "MMAdView.h"
 
-@interface TiMillennialmediaModule : TiModule <MMAdDelegate>
+typedef enum {
+    TiMMBanner = 0,
+    TiMMInterstitial
+} TiMMType;
+
+#define FIRE_EVENT_IF_LISTENER(name, obj) \
+if ([self _hasListeners:name]) \
+{ \
+[self fireEvent:name withObject:obj]; \
+} \
+
+@interface TiMillennialmediaModule : TiModule <TiProxyDelegate>
 {
+@private
+    CLLocation *geolocation_;
+    NSDictionary *demographics_;
+    NSMutableArray *keywords_;
+    NSDictionary *customParameters_;
 }
 
-+(NSDictionary*)retrieveDemographics;
++(TiMillennialmediaModule *)sharedInstance;
 
--(void)trackGoal:(NSString*)goal;
-
-@property (readonly, nonatomic) NSNumber* TYPE_TOP;
-@property (readonly, nonatomic) NSNumber* TYPE_BOTTOM;
-@property (readonly, nonatomic) NSNumber* TYPE_RECTANGLE;
-@property (readonly, nonatomic) NSNumber* TYPE_LAUNCH;
-@property (readonly, nonatomic) NSNumber* TYPE_TRANSITION;
+-(MMRequest *)request;
 
 @end

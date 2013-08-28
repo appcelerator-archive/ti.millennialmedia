@@ -6,9 +6,21 @@
 // for this file:
 // http://developer.apple.com/mac/library/documentation/DeveloperTools/Conceptual/XcodeBuildSystem/400-Build_Configurations/build_configs.html
 // 
-
-OTHER_LDFLAGS=$(inherited) -framework QuartzCore -framework MediaPlayer -framework UIKit -framework Foundation -framework CoreGraphics
-
 //
 // IMPORTANT NOTE: always use $(inherited) in your overrides
 // 
+
+OTHER_LDFLAGS=$(inherited) -framework AudioToolbox.framework
+OTHER_LDFLAGS=$(inherited) -framework AVFoundation.framework
+OTHER_LDFLAGS=$(inherited) -framework CoreGraphics.framework
+OTHER_LDFLAGS=$(inherited) -framework Foundation.framework
+OTHER_LDFLAGS=$(inherited) -framework MediaPlayer.framework
+OTHER_LDFLAGS=$(inherited) -framework MobileCoreServices.framework
+OTHER_LDFLAGS=$(inherited) -framework QuartzCore.framework
+OTHER_LDFLAGS=$(inherited) -framework SystemConfiguration.framework
+OTHER_LDFLAGS=$(inherited) -framework UIKit.framework
+
+OTHER_LDFLAGS=$(inherited) -weak_framework AdSupport.framework
+OTHER_LDFLAGS=$(inherited) -weak_framework PassKit.framework
+OTHER_LDFLAGS=$(inherited) -weak_framework Social.framework
+OTHER_LDFLAGS=$(inherited) -weak_framework StoreKit.framework
