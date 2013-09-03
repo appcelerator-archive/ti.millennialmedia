@@ -5,7 +5,6 @@
 //  Copyright (c) 2013 Millennial Media Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "MMSDK.h"
 

@@ -9,23 +9,24 @@
 #import <CoreLocation/CoreLocation.h>
 
 typedef enum {
-    MMEducationUnknown = 0,
+    MMEducationOther,
     MMEducationNone,
     MMEducationHighSchool,
+    MMEducationInCollege,
     MMEducationSomeCollege,
+    MMEducationAssociates,
     MMEducationBachelors,
     MMEducationMasters,
     MMEducationDoctorate
 } MMEducation;
 
 typedef enum {
-    MMGenderUnknown = 0,
+    MMGenderOther,
     MMGenderMale,
     MMGenderFemale
 } MMGender;
 
 typedef enum {
-    MMEthnicityUnknown = 0,
     MMEthnicityMiddleEastern,
     MMEthnicityAsian,
     MMEthnicityBlack,
@@ -38,19 +39,19 @@ typedef enum {
 } MMEthnicity;
 
 typedef enum {
-    MMMaritalUnknown = 0,
+    MMMaritalOther,
     MMMaritalSingle,
+    MMMaritalRelationship,
     MMMaritalMarried,
     MMMaritalDivorced,
     MMMaritalEngaged
 } MMMaritalStatus;
 
 typedef enum {
-    MMSexualOrientationUnknown = 0,
+    MMSexualOrientationOther,
     MMSexualOrientationGay,
     MMSexualOrientationStraight,
-    MMSexualOrientationBisexual,
-    MMSexualOrientationTransgender
+    MMSexualOrientationBisexual
 } MMSexualOrientation;
 
 @interface MMRequest : NSObject

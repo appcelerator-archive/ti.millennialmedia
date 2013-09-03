@@ -3,8 +3,8 @@
  */
 var interstitialDemoButton = Ti.UI.createButton({
     title: 'Show Interstitial Ad',
-    bottom: 60, left: 20, right: 20,
-    height: 35
+    bottom: "20%", left: 20, right: 20,
+    height: "10%"
 });
 interstitialDemoButton.addEventListener('click', function () {
     var view = MillennialMedia.createView({
@@ -29,15 +29,19 @@ interstitialDemoButton.addEventListener('click', function () {
         Ti.API.info('interstitial modalDidDismiss');
         MillennialMedia.removeEventListener('modalDidDismiss', modalDidDismiss);
         win.remove(view);
-        Ti.UI.iPhone.setStatusBarHidden(false);
+        if (IOS) {
+            Ti.UI.iPhone.setStatusBarHidden(false);
+        }
     }
     
-    MillennialMedia.addEventListener('modalDidAppear', modalDidAppear);
-    function modalDidAppear() {
-        Ti.API.info('interstitial modalDidAppear');
-        MillennialMedia.removeEventListener('modalDidAppear', modalDidAppear);
-        // Some Interstitial ads want to use the full screen, hiding the status bar to allow this.
-        Ti.UI.iPhone.setStatusBarHidden(true);
+    if (IOS) {
+        MillennialMedia.addEventListener('modalDidAppear', modalDidAppear);
+        function modalDidAppear() {
+            Ti.API.info('interstitial modalDidAppear');
+            MillennialMedia.removeEventListener('modalDidAppear', modalDidAppear);
+            // Some Interstitial ads want to use the full screen, hiding the status bar to allow this.
+            Ti.UI.iPhone.setStatusBarHidden(true);
+        }
     }
     
     win.add(view);

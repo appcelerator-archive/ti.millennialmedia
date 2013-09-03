@@ -8,10 +8,17 @@ __WARNING:__ You must set the "apid" property of Ti.MillennialMedia.View before 
 
 ## View Size
 
-For banner ads, the size of the view controls what size of ad is returned. The following ad sizes are available:
+For banner ads, the size of the view controls what size of ad is returned. Below are the available banner sizes.
 
+#### iOS:
 * Banner iPhone: 320 x 50
 * Banner iPad: 728 x 90
+* Rectangle: 300 x 250
+
+#### Android:
+* Banner Phone: 320 x 50
+* Banner Medium: 480 x 60
+* Banner Tablet: 728 x 90
 * Rectangle: 300 x 250
 
 The view should be set to one of these dimentions durring creation.
@@ -33,6 +40,11 @@ have yet.
 
 ### autoLoad [boolean] (defaults to true)
 Whether or not the ad should load and display as soon as it is added to the view hierarchy. Note that if you set this to false, no ad will be displayed until you call the `refresh` method for __banner__ ads or `display` for __interstitial__ ads. Interstitial ads will still make a request for an ad when the view is added to a parent, but will not auto display it if autoLoad is false.
+
+### ignoreDensityScaling [boolean] (defaults to true)
+Controls whether density scaling is used for the ad view.
+
+__Android only.__
 
 ### Additional Properties
 A _Ti.MillennialMedia.View_ inherits from [Ti.UI.View][], so any properties that you can set on a view can also be utilized here.

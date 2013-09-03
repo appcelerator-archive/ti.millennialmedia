@@ -2,11 +2,11 @@
  * This example demonstrates a couple of different ads that you can display from Millennial Media.
  */
 var IPAD = (Ti.Platform.osname === 'ipad');
+var IOS = (Ti.Platform.osname === 'iphone' || Ti.Platform.osname === 'ipad');
 var MillennialMedia = require('ti.millennialmedia');
 
 // Set the log level on the module
-// Log levels are independent of one another, rather than threshold values
-MillennialMedia.logLevel = [MillennialMedia.LOG_LEVEL_ERROR, MillennialMedia.LOG_LEVEL_INFO, MillennialMedia.LOG_LEVEL_FATAL];
+MillennialMedia.setLogLevel(MillennialMedia.LOG_LEVEL_VERBOSE);
 
 MillennialMedia.geolocation = {
     latitude:41.866, 'longitude':-88.107
@@ -23,7 +23,7 @@ MillennialMedia.demographics = {
     zipCode: '60187'
 };
 
-MillennialMedia.customParameters = {
+MillennialMedia.custom = {
     something: "CUSTOM1",
     'somethingelse' : "CUSTOM2"
 };
@@ -43,6 +43,8 @@ function curryEventHandler(type) {
     }
 }
 
+// 'applicationWillTerminateFromAd', 'modalWillAppear', and 'modalWillDismiss' are
+// iOS only, but it does not hurt to add their listeners on Android.
 var events = ['adRequestComplete', 'applicationWillTerminateFromAd', 'adWasTapped', 
     'modalWillAppear', 'modalDidAppear', 'modalWillDismiss', 'modalDidDismiss'];
 for (var k in events) {

@@ -142,10 +142,29 @@ static TiMillennialmediaModule *sharedInstance = nil;
 
 -(void)setLogLevel:(id)args
 {
-    ENSURE_TYPE(args, NSArray);
-    int level = 0;
-    for (id obj in args) {
-        level = level | [obj intValue];
+    // In the MM Android SDK, log levels are limits
+    // Creating the same behavior here in the name of parity
+    ENSURE_SINGLE_ARG(args, NSNumber);
+    int newLevel = [TiUtils intValue:args];
+    int level = 0; // Default to MMLOG_LEVEL_OFF
+    switch (newLevel) {
+        case MMLOG_LEVEL_OFF:
+            level = MMLOG_LEVEL_OFF;
+            break;
+        case MMLOG_LEVEL_ERROR:
+            level = MMLOG_LEVEL_ERROR;
+            break;
+        case MMLOG_LEVEL_INFO:
+            level = MMLOG_LEVEL_ERROR | MMLOG_LEVEL_INFO;
+            break;
+        case MMLOG_LEVEL_DEBUG:
+            level = MMLOG_LEVEL_ERROR | MMLOG_LEVEL_INFO | MMLOG_LEVEL_DEBUG;
+            break;
+        case MMLOG_LEVEL_FATAL:
+            level = MMLOG_LEVEL_ERROR | MMLOG_LEVEL_INFO | MMLOG_LEVEL_DEBUG | MMLOG_LEVEL_FATAL;
+            break;
+        default:
+            break;
     }
     [MMSDK setLogLevel:level];
 }
@@ -266,7 +285,7 @@ static TiMillennialmediaModule *sharedInstance = nil;
         } else {
             RELEASE_TO_NIL(geolocation_);
         }
-    } else if ([key isEqualToString:@"customParameters"]) {
+    } else if ([key isEqualToString:@"custom"]) {
         ENSURE_TYPE_OR_NIL(newValue, NSDictionary);
         if (customParameters_ != nil) {
             RELEASE_TO_NIL(customParameters_);
@@ -378,16 +397,16 @@ MAKE_SYSTEM_PROP(TYPE_BANNER, TiMMBanner);
 MAKE_SYSTEM_PROP(TYPE_INTERSTITIAL, TiMMInterstitial);
 
 // Log Level
-MAKE_SYSTEM_PROP(LOG_LEVEL_OFF, MMLOG_LEVEL_OFF);
+MAKE_SYSTEM_PROP(LOG_LEVEL_OFF, MMLOG_LEVEL_OFF); // No equivalent on Android
+MAKE_SYSTEM_PROP(LOG_LEVEL_ERROR, MMLOG_LEVEL_ERROR);
 MAKE_SYSTEM_PROP(LOG_LEVEL_INFO, MMLOG_LEVEL_INFO);
 MAKE_SYSTEM_PROP(LOG_LEVEL_DEBUG, MMLOG_LEVEL_DEBUG);
-MAKE_SYSTEM_PROP(LOG_LEVEL_ERROR, MMLOG_LEVEL_ERROR);
-MAKE_SYSTEM_PROP(LOG_LEVEL_FATAL, MMLOG_LEVEL_FATAL);
+MAKE_SYSTEM_PROP(LOG_LEVEL_VERBOSE, MMLOG_LEVEL_FATAL); // VERBOSE to match Android
 
 // Gender
 MAKE_SYSTEM_PROP(GENDER_MALE, MMGenderMale);
 MAKE_SYSTEM_PROP(GENDER_FEMALE, MMGenderFemale);
-MAKE_SYSTEM_PROP(GENDER_UNKNOWN, MMGenderUnknown);
+MAKE_SYSTEM_PROP(GENDER_UNKNOWN, MMGenderOther);
 
 // Ethnicity
 MAKE_SYSTEM_PROP(ETHNICITY_ASIAN, MMEthnicityAsian);
@@ -402,22 +421,26 @@ MAKE_SYSTEM_PROP(ETHNICITY_OTHER, MMEthnicityOther);
 
 // Education
 MAKE_SYSTEM_PROP(EDUCATION_HIGH_SCHOOL, MMEducationHighSchool);
+MAKE_SYSTEM_PROP(EDUCATION_IN_COLLEGE, MMEducationInCollege);
 MAKE_SYSTEM_PROP(EDUCATION_SOME_COLLEGE, MMEducationSomeCollege);
+MAKE_SYSTEM_PROP(EDUCATION_ASSOCIATES, MMEducationAssociates);
 MAKE_SYSTEM_PROP(EDUCATION_BACHELORS, MMEducationBachelors);
 MAKE_SYSTEM_PROP(EDUCATION_MASTERS, MMEducationMasters);
 MAKE_SYSTEM_PROP(EDUCATION_DOCTORATE, MMEducationDoctorate);
-MAKE_SYSTEM_PROP(EDUCATION_UNKNOWN, MMEducationUnknown);
+MAKE_SYSTEM_PROP(EDUCATION_OTHER, MMEducationOther);
 
 // Marital Status
 MAKE_SYSTEM_PROP(MARITAL_SINGLE, MMMaritalSingle);
+MAKE_SYSTEM_PROP(MARITAL_RELATIONSHIP, MMMaritalRelationship);
 MAKE_SYSTEM_PROP(MARITAL_MARRIED, MMMaritalMarried);
 MAKE_SYSTEM_PROP(MARITAL_DIVORCED, MMMaritalDivorced);
 MAKE_SYSTEM_PROP(MARITAL_ENGAGED, MMMaritalEngaged);
+MAKE_SYSTEM_PROP(MARITAL_OTHER, MMMaritalOther);
 
 // Sexual Orientation
 MAKE_SYSTEM_PROP(SEXUAL_ORIENTATION_STRAIGHT, MMSexualOrientationStraight);
 MAKE_SYSTEM_PROP(SEXUAL_ORIENTATION_GAY, MMSexualOrientationGay);
 MAKE_SYSTEM_PROP(SEXUAL_ORIENTATION_BISEXUAL, MMSexualOrientationBisexual);
-MAKE_SYSTEM_PROP(SEXUAL_ORIENTATION_UNKNOWN, MMSexualOrientationUnknown);
+MAKE_SYSTEM_PROP(SEXUAL_ORIENTATION_OTHER, MMSexualOrientationOther);
 
 @end

@@ -25,17 +25,6 @@ The `MillennialMedia` variable is a reference to the Module object.
 ### version [string] (read-only)
 The version of the MillennialMedia library.
 
-### logLevel [int[]] (write-only)
-Used to set the log level of the MillennialMedia library. Log levels are independent of one another, rather than threshold values. See constants for available log levels.
-
-#### Example
-
-	MillennialMedia.logLevel = [
-		MillennialMedia.LOG_LEVEL_ERROR, 
-		MillennialMedia.LOG_LEVEL_INFO, 
-		MillennialMedia.LOG_LEVEL_FATAL
-	];
-
 ### demographics [object]
 Demographic information about the current user, such as their age gender and location. Any ads you display will use this information. This is a dictionary with any of the following properties:
 
@@ -80,7 +69,7 @@ Set the user's last known location. Any ads you display will use this informatio
 	};
 
 
-### customParameters [object]
+### custom [object]
 Sets additional custom parameters for the ad request. Any ads you display will use this information. Values must be strings or numbers. For example, you might use a number value for the key "children" or "income". You could use string values such as "conservative" or "liberal" for the key "politics".
 
 #### Example
@@ -91,6 +80,13 @@ Sets additional custom parameters for the ad request. Any ads you display will u
 	};
 
 ## Methods
+
+### setLogLevel(int)
+Used to set the log level of the MillennialMedia library. See constants for available log levels.
+
+#### Example
+
+	MillennialMedia.setLogLevel(MillennialMedia.LOG_LEVEL_VERBOSE);
 
 ### [Ti.MillennialMedia.View][] createView({...})
 Creates a [Ti.MillennialMedia.View][], which will display an ad for you. Takes a dictionary of the properties available on the view as an argument.
@@ -139,12 +135,13 @@ The event object has the following properties:
 * success [boolean]: Will be true if the request was successful or false if it was not.
 * error [string]: Description of the error if one occurred. Success will be false if there is an error.
 * adView [[Ti.MillennialMedia.View][]]: The ad view that fired the event
-* requestParameters [object]: Dictionary that contains the location, demographic, and contextual information sent for this request and their associated keys.
 * apid [string]: The apid of the view that made the request.
 * adType [int]: The adType of the view that made the request. See the `adType` property of [Ti.MillennialMedia.View][].
 
 ### applicationWillTerminateFromAd
 Occurs when launching an external application, causing the current application to either terminate or enter the background. This event will be fired when the application will exit to launch another application such as the App Store, iTunes, or Safari.
+
+__iOS only.__
 
 No event object is passed with this event.
 
@@ -157,7 +154,9 @@ The event object has the following properties:
 * adType [int]: The adType of the view that made the request. See the `adType` property of [Ti.MillennialMedia.View][].
 
 ### modalWillAppear
-Event fired when a modal view is about to be made visible.
+Event fired when a modal view is about to be made visible. 
+
+__iOS only.__
 
 The event object has the following properties:
 
@@ -174,6 +173,8 @@ The event object has the following properties:
 
 ### modalWillDismiss
 Event fired when a modal view is dismissed, covered, or otherwise hidden.
+
+__iOS only.__
 
 The event object has the following properties:
 
@@ -197,9 +198,6 @@ Used to set `adType` when creating a [Ti.MillennialMedia.View][]. Use to create 
 ### TYPE_INTERSTITIAL
 Used to set `adType` when creating a [Ti.MillennialMedia.View][]. 
 
-### LOG_LEVEL_OFF
-Used to set the `logLevel` of the MillennialMedia library.
-
 ### LOG_LEVEL_INFO
 Used to set the `logLevel` of the MillennialMedia library.
 
@@ -209,7 +207,7 @@ Used to set the `logLevel` of the MillennialMedia library.
 ### LOG_LEVEL_ERROR
 Used to set the `logLevel` of the MillennialMedia library.
 
-### LOG_LEVEL_FATAL
+### LOG_LEVEL_VERBOSE
 Used to set the `logLevel` of the MillennialMedia library.
 
 ### GENDER_MALE
@@ -218,7 +216,7 @@ Used to set `gender` in the `demographics` object.
 ### GENDER_FEMALE
 Used to set `gender` in the `demographics` object.
 
-### GENDER_UNKNOWN
+### GENDER_OTHER
 Used to set `gender` in the `demographics` object.
 
 ### ETHNICITY_ASIAN
@@ -251,7 +249,13 @@ Used to set `ethnicity` in the `demographics` object.
 ### EDUCATION_HIGH_SCHOOL
 Used to set `education` in the `demographics` object.
 
+### EDUCATION_IN_COLLEGE
+Used to set `education` in the `demographics` object.
+
 ### EDUCATION_SOME_COLLEGE
+Used to set `education` in the `demographics` object.
+
+### EDUCATION_ASSOCIATES
 Used to set `education` in the `demographics` object.
 
 ### EDUCATION_BACHELORS
@@ -263,10 +267,13 @@ Used to set `education` in the `demographics` object.
 ### EDUCATION_DOCTORATE
 Used to set `education` in the `demographics` object.
 
-### EDUCATION_UNKNOWN
+### EDUCATION_OTHER
 Used to set `education` in the `demographics` object.
 
 ### MARITAL_SINGLE
+Used to set `maritalStatus` in the `demographics` object.
+
+### MARITAL_RELATIONSHIP
 Used to set `maritalStatus` in the `demographics` object.
 
 ### MARITAL_MARRIED
@@ -278,6 +285,9 @@ Used to set `maritalStatus` in the `demographics` object.
 ### MARITAL_ENGAGED
 Used to set `maritalStatus` in the `demographics` object.
 
+### MARITAL_OTHER
+Used to set `maritalStatus` in the `demographics` object.
+
 ### SEXUAL_ORIENTATION_STRAIGHT
 Used to set `orientation` in the `demographics` object.
 
@@ -287,7 +297,7 @@ Used to set `orientation` in the `demographics` object.
 ### SEXUAL_ORIENTATION_BISEXUAL
 Used to set `orientation` in the `demographics` object.
 
-### SEXUAL_ORIENTATION_UNKNOWN
+### SEXUAL_ORIENTATION_OTHER
 Used to set `orientation` in the `demographics` object.
 
 

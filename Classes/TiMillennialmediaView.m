@@ -92,22 +92,20 @@
 {
     if (adView_ != nil) {
         MMRequest *request = [[TiMillennialmediaModule sharedInstance] request];
-        NSDictionary *requestParams = [request.dataParameters retain];
         
         [adView_ getAdWithRequest:request
                     onCompletion:^(BOOL success, NSError *error) {
-                        [self fireRequestCompleteEvent:success error:error requestParams:[requestParams autorelease]];
+                        [self fireRequestCompleteEvent:success error:error];
                     }];
     }
 }
 
--(void)fireRequestCompleteEvent:(BOOL)success error:(NSError *)error requestParams:(NSDictionary *)requestParams
+-(void)fireRequestCompleteEvent:(BOOL)success error:(NSError *)error
 {
     if ([[TiMillennialmediaModule sharedInstance] _hasListeners:@"adRequestComplete"]) {
         NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
                                NUMBOOL(success), @"success",
                                self.proxy, @"adView",
-                               (requestParams == nil) ? [NSNull null] : requestParams, @"requestParameters",
                                (error == nil) ? [NSNull null] : [error localizedDescription], @"error",
                                [self apid], @"apid",
                                [NSNumber numberWithInt:[self adType]], @"adType",
