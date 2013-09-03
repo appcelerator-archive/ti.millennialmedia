@@ -2,10 +2,10 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 2.2.1
+version: 2.3.0
 apiversion: 2
 description: Mobile Advertising with Millennial Media
-author: Dawson Toth
+author: Dawson Toth & Jon Alter
 license: Appcelerator Commercial License
 copyright: Copyright (c) 2010-2013 by Appcelerator, Inc.
 
@@ -14,4 +14,4 @@ name: millennialmedia
 moduleid: ti.millennialmedia
 guid: 72599f01-03dc-4c82-b474-6f18054d94a5
 platform: android
-minsdk: 2.1.3.GA
+minsdk: 3.0.0.GA

@@ -1,28 +1,65 @@
 /**
  * This example demonstrates a couple of different ads that you can display from Millennial Media.
- * We'll look at five different types of ads.
  */
+var IPAD = (Ti.Platform.osname === 'ipad');
+var IOS = (Ti.Platform.osname === 'iphone' || Ti.Platform.osname === 'ipad');
 var MillennialMedia = require('ti.millennialmedia');
-MillennialMedia.demographics = {
-    age:'23',
-    gender:'male',
-    zip:'60187',
-    lat:'41.866', 'long':'-88.107'
+
+// Set the log level on the module
+MillennialMedia.setLogLevel(MillennialMedia.LOG_LEVEL_VERBOSE);
+
+MillennialMedia.geolocation = {
+    latitude:41.866, 'longitude':-88.107
 };
+
+// Set demographics using module constants
+MillennialMedia.demographics = {
+    age: '23',
+    gender: MillennialMedia.GENDER_MALE,
+    education: MillennialMedia.EDUCATION_SOME_COLLEGE,
+    ethnicity: MillennialMedia.ETHNICITY_HISPANIC,
+    maritalStatus: MillennialMedia.MARITAL_DIVORCED,
+    orientation: MillennialMedia.SEXUAL_ORIENTATION_STRAIGHT,
+    zipCode: '60187'
+};
+
+MillennialMedia.custom = {
+    something: "CUSTOM1",
+    'somethingelse' : "CUSTOM2"
+};
+
+MillennialMedia.keywords = ['KEYWORD1', 'KEYWORD2'];
 
 var win = Ti.UI.createWindow({
     backgroundColor:'white'
 });
+
+/**
+ * Here we demonstrate the different events available
+ */
+function curryEventHandler(type) {
+    return function () {
+        Ti.API.info(type + ' fired!');
+    }
+}
+
+// 'applicationWillTerminateFromAd', 'modalWillAppear', and 'modalWillDismiss' are
+// iOS only, but it does not hurt to add their listeners on Android.
+var events = ['adRequestComplete', 'applicationWillTerminateFromAd', 'adWasTapped', 
+    'modalWillAppear', 'modalDidAppear', 'modalWillDismiss', 'modalDidDismiss'];
+for (var k in events) {
+    MillennialMedia.addEventListener(events[k], curryEventHandler(events[k]));
+}
+
 /**
  * To keep this demo easy to understand, I have split the different types of ads in to their
  * own JavaScript files. Look at the following files to find out more:
  */
 Ti.include(
-    'launch.js',
     'top.js',
     'bottom.js',
     'rectangle.js',
-    'transition.js'
+    'interstitial.js'
 );
 
 /**

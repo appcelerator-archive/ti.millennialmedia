@@ -2,9 +2,10 @@
  * Now, let's place an ad arbitrarily in the middle of our app.
  */
 win.add(MillennialMedia.createView({
-    apid:'54138',
-    top:54, left:0, right:0,
-    height:150,
-    type:MillennialMedia.TYPE_RECTANGLE,
-    refreshDuration:60
+    apid: '54195',
+    top: 100,
+    // For a rectangle size ad the view should be 300 x 250
+    width: 300,
+    height: 250,
+    adType: MillennialMedia.TYPE_BANNER
 }));

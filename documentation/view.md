@@ -4,83 +4,68 @@
 
 Displays an ad to the user.
 
-WARNING: You must set the "apid" property of Ti.MillennialMedia before you can display any ads to the user!
+__WARNING:__ You must set the "apid" property of Ti.MillennialMedia.View before you can display any ads to the user!
+
+## View Size
+
+For banner ads, the size of the view controls what size of ad is returned. Below are the available banner sizes.
+
+#### iOS:
+* Banner iPhone: 320 x 50
+* Banner iPad: 728 x 90
+* Rectangle: 300 x 250
+
+#### Android:
+* Banner Phone: 320 x 50
+* Banner Medium: 480 x 60
+* Banner Tablet: 728 x 90
+* Rectangle: 300 x 250
+
+The view should be set to one of these dimentions durring creation.
+
+__NOTE:__ View size has no affect on interstitial ads.
 
 ## Properties
 
-### apid [string, required]
-Your APID from Millennial Media for this ad's placement. This is shown on the on developer.millennialmedia.com.
+### apid [string] (required)
+Your APID from Millennial Media for this ad. This is shown on the on [http://developer.millennialmedia.com](http://developer.millennialmedia.com).
 
-### type [int, defaults to TYPE_TOP]
-Controls the type of ad that will be displayed to the user. Look at the constants available on [Ti.MillennialMedia][] to
-see what you can set here.
+### adType [int] (defaults to TYPE_BANNER)
+Controls the type of ad that will be displayed to the user. Available ad types are `TYPE_BANNER` and `TYPE_INTERSTITIAL`. See available constants at [Ti.MillennialMedia][].
 
-WARNING: when using launch and transition type ads, you do not need to size them; they'll take over the full view of your
-app while they are displayed. It is very important that you listen for "fail" and "modalWasDismissed" to remove the ad
-from the window after the user is done with it.
+WARNING: when using interstitial type ads, you do not need to size them; they'll take over the full view of your app while they are displayed. It can be desirable to set the size of the view to 0 x 0 for interstitial ads, to ensure that the view does not block the UI while the ad is loading, before it is displayed.  It is very important that you listen for "adRequestComplete" (with a failure) and "modalDidDismiss" to remove the ad from the window after the user is done with it. See the example app.
 
-Also note that "launch" ads may not display immediately. If the server responds with a cached ad that the client does not
-have yet, it will download it so it can be used for launch ads in the future. The result is you may not see ads the first
-couple of times the app is launched, but they will show up more regularly as the user uses the app.
+Also note that "interstitial" ads may not display immediately. If the server responds with a cached ad that the client does not
+have yet.
 
-### autoRefresh [bool, defaults to true]
-Whether or not the ad should auto refresh. Use the "refreshDuration" property to control how often this happens.
+### autoLoad [boolean] (defaults to true)
+Whether or not the ad should load and display as soon as it is added to the view hierarchy. Note that if you set this to false, no ad will be displayed until you call the `refresh` method for __banner__ ads or `display` for __interstitial__ ads. Interstitial ads will still make a request for an ad when the view is added to a parent, but will not auto display it if autoLoad is false.
 
-### refreshDuration [int, defaults to 60]
-The number of seconds to wait before auto refreshing the ad. If "autoRefresh" is false, this property will not do
-anything. Must be at least 30 seconds.
+### ignoreDensityScaling [boolean] (defaults to true)
+Controls whether density scaling is used for the ad view.
 
-### autoLoad [bool, defaults to true]
-Whether or not the ad should load as soon as it is added to the view hierarchy. Note that if you set this to false, no
-ad will be displayed until you call the "refresh" method.
-
-### accelerometerEnabled [bool, defaults to true]
-Whether or not ads can utilize the accelerometer.
-
-### ignoreDensityScaling [bool, defaults to true, Android only]
-This allows you to disable or enable any automatic scaling of the ad view content on high density devices. For example,
-on a high-density screen a 320x53 banner ad may appear to be stretched. Set this value to true to avoid the stretching
-and to show the banner ad in a smaller portion of the screen.
+__Android only.__
 
 ### Additional Properties
-A _Ti.MillennialMedia.View_ inherits from [Ti.UI.View][], so any properties that you can set on a view can also be
-utilized here.
+A _Ti.MillennialMedia.View_ inherits from [Ti.UI.View][], so any properties that you can set on a view can also be utilized here.
 
 ## Methods
 
-### refresh()
+### void display()
+Will display an Interstitial ad if one is available. Check if an ad is available using `isAdAvailable`.
+
+For __interstitial__ ads only.
+
+### void isAdAvailable()
+
+Check if an ad has been downloaded for this view.
+
+For __interstitial__ ads only.
+
+### void refresh()
 Shows a new ad to the user.
 
-## Events
-
-### success
-Occurs whenever an ad is displayed to the user.
-
-### fail
-Occurs whenever an ad cannot be served to the user, whether this is from your apid being incorrectly set, invalid,
-network connectivity failing, or some other unforeseen reason (such as the cubs losing).
-
-### refresh
-Occurs when the ad is refreshed.
-
-### tapped
-Occurs when the user taps on an ad.
-
-### isCaching
-Occurs when an ad is being cached.
-
-### willTerminate
-Occurs when your app is going to terminate, or background, because an external app (such as the store or the browser)
-due to the user interacting with an ad.
-
-### modalWillAppear
-Occurs just before a modal ad is shown to the user.
-
-### modalDidAppear
-Occurs after a modal ad is shown to the user.
-
-### modalWasDismissed [iOS only]
-Occurs after the user dismisses a modal ad.
+For __banner__ ads only.
 
 [Ti.MillennialMedia]: index.html
 [Ti.UI.View]: http://developer.appcelerator.com/apidoc/mobile/latest/Titanium.UI.View-object
