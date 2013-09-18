@@ -32,7 +32,7 @@ USE_VIEW_FOR_UI_METHOD(refresh);
 
 -(id)isAdAvailable:(id)args
 {
-    if ([self.view adType] != TiMMInterstitial) {
+    if ([(TiMillennialmediaView*)self.view adType] != TiMMInterstitial) {
         NSLog(@"[WARN] The `isAdAvailable` method is only for Interstitial ads.");
         return NUMBOOL(NO);
     }

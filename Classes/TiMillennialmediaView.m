@@ -26,7 +26,8 @@
     return self;
 }
 
--(void)dealloc {
+-(void)dealloc
+{
     if (adView_ != nil) {
         [adView_ removeFromSuperview];
         RELEASE_TO_NIL(adView_);
@@ -44,8 +45,7 @@
         [MMInterstitial fetchWithRequest:request
                                     apid:[TiUtils stringValue:[self.proxy valueForKey:@"apid"]]
                             onCompletion:^(BOOL success, NSError *error) {
-                                
-                                [self fireRequestCompleteEvent:success error:error requestParams:[requestParams autorelease]];
+                                [self fireRequestCompleteEvent:success error:error];
                                 
                                 if (success && autoLoad) {
                                         [self displayAd];

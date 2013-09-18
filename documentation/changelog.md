@@ -1,6 +1,6 @@
 # Change Log
 <pre>
-v1.2.0	Upgraded to SDK 5.1.1 [MOD-1397]
+v3.0.0	Upgraded to SDK 5.1.1 [MOD-1397]
 
 v1.1.1	Added attribution [MOD-1087]
 	

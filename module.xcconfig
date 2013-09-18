@@ -10,17 +10,4 @@
 // IMPORTANT NOTE: always use $(inherited) in your overrides
 // 
 
-OTHER_LDFLAGS=$(inherited) -framework AudioToolbox.framework
-OTHER_LDFLAGS=$(inherited) -framework AVFoundation.framework
-OTHER_LDFLAGS=$(inherited) -framework CoreGraphics.framework
-OTHER_LDFLAGS=$(inherited) -framework Foundation.framework
-OTHER_LDFLAGS=$(inherited) -framework MediaPlayer.framework
-OTHER_LDFLAGS=$(inherited) -framework MobileCoreServices.framework
-OTHER_LDFLAGS=$(inherited) -framework QuartzCore.framework
-OTHER_LDFLAGS=$(inherited) -framework SystemConfiguration.framework
-OTHER_LDFLAGS=$(inherited) -framework UIKit.framework
-
-OTHER_LDFLAGS=$(inherited) -weak_framework AdSupport.framework
-OTHER_LDFLAGS=$(inherited) -weak_framework PassKit.framework
-OTHER_LDFLAGS=$(inherited) -weak_framework Social.framework
-OTHER_LDFLAGS=$(inherited) -weak_framework StoreKit.framework
+OTHER_LDFLAGS=$(inherited) -framework AudioToolbox -framework AVFoundation -framework CoreGraphics -framework Foundation -framework MediaPlayer -framework MobileCoreServices -framework QuartzCore -framework SystemConfiguration -framework UIKit -weak_framework AdSupport -weak_framework PassKit -weak_framework Social -weak_framework StoreKit

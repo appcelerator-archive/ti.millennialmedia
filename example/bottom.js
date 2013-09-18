@@ -3,7 +3,7 @@
  * events that are available.
  */
 win.add(MillennialMedia.createView({
-    apid: '54197',
+    apid: '<INSERT YOUR APID HERE>',
     bottom: 0,
     width: 320,
     height: 50,

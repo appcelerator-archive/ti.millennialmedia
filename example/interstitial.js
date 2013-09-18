@@ -8,7 +8,7 @@ var interstitialDemoButton = Ti.UI.createButton({
 });
 interstitialDemoButton.addEventListener('click', function () {
     var view = MillennialMedia.createView({
-        apid: '123212',
+        apid: '<INSERT YOUR APID HERE>',
         // It can be desirable to set the size of the view to 0 for interstitial ads to 
         // ensure that it does not block the UI while it is loading, before it is displayed. 
         top: 0, width: 0, height: 0,
