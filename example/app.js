@@ -51,6 +51,12 @@ for (var k in events) {
     MillennialMedia.addEventListener(events[k], curryEventHandler(events[k]));
 }
 
+MillennialMedia.addEventListener('adRequestComplete', function (e) {
+    if (!e.success) {
+        alert('Request Error: ' + e.error);
+    }
+});
+
 /**
  * To keep this demo easy to understand, I have split the different types of ads in to their
  * own JavaScript files. Look at the following files to find out more:

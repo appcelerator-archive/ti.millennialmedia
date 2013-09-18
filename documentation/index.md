@@ -102,7 +102,7 @@ Creates a [Ti.MillennialMedia.View][], which will display an ad for you. Takes a
 	    adType: MillennialMedia.TYPE_BANNER
 	});
 
-### void trackConversion({…})
+### void trackConversion({...})
 Reports a goal conversion to the Millennial Conversion tracking server.
 
 * goalId [string]: The Millennial Media Goal ID for tracking conversions for your application.
@@ -113,7 +113,7 @@ Reports a goal conversion to the Millennial Conversion tracking server.
 		goalId: 'SOME GOAL ID'
 	});
 
-### void trackEvent({…})
+### void trackEvent({...})
 Reports an event conversion.
 
 * eventId [string]: The Millennial Media event ID for tracking events in your application.
