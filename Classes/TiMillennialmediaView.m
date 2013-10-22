@@ -40,7 +40,6 @@
     if ([self adType] == TiMMInterstitial) {
         BOOL autoLoad = [TiUtils boolValue:[self.proxy valueForKey:@"autoLoad"] def:YES];
         MMRequest *request = [[TiMillennialmediaModule sharedInstance] request];
-        NSDictionary *requestParams = [request.dataParameters retain];
         
         [MMInterstitial fetchWithRequest:request
                                     apid:[TiUtils stringValue:[self.proxy valueForKey:@"apid"]]

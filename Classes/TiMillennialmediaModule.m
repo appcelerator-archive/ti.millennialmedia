@@ -22,6 +22,12 @@ if ([self _hasListeners:name]) \
 #pragma mark -
 #pragma mark Internal
 
+static TiMillennialmediaModule *sharedInstance;
++ (TiMillennialmediaModule *)sharedInstance
+{
+    return sharedInstance;
+}
+
 -(id)moduleGUID
 {
 	return @"72599f01-03dc-4c82-b474-6f18054d94a5";
@@ -39,6 +45,7 @@ if ([self _hasListeners:name]) \
 	[super startup];
     
     self.modelDelegate = self;
+    sharedInstance = self;
     
     [MMSDK initialize]; // Initialize a Millennial Media session
     [self listenForEvents];
@@ -52,73 +59,14 @@ if ([self _hasListeners:name]) \
 }
 
 #pragma mark -
-#pragma mark Singleton
-
-static TiMillennialmediaModule *sharedInstance = nil;
-
-// Get the shared instance and create it if necessary.
-+ (TiMillennialmediaModule *)sharedInstance {
-    if (sharedInstance == nil) {
-        sharedInstance = [[super allocWithZone:NULL] init];
-    }
-    
-    return sharedInstance;
-}
-
-// We can still have a regular init method, that will get called the first time the Singleton is used.
-- (id)init
-{
-    self = [super init];
-    
-    if (self) {
-        geolocation_ = nil;
-        demographics_ = nil;
-        keywords_ = nil;
-        customParameters_ = nil;
-    }
-    
-    return self;
-}
-
-// We don't want to allocate a new instance, so return the current one.
-+ (id)allocWithZone:(NSZone*)zone {
-    return [[self sharedInstance] retain];
-}
-
-// Equally, we don't want to generate multiple copies of the singleton.
-- (id)copyWithZone:(NSZone *)zone {
-    return self;
-}
-
-// Once again - do nothing, as we don't have a retain counter for this object.
-- (id)retain {
-    return self;
-}
-
-// Replace the retain counter so we can never release this object.
-- (NSUInteger)retainCount {
-    return NSUIntegerMax;
-}
-
-// This function is empty, as we don't want to let the user release this object.
-- (oneway void)release {
-    
-}
-
-//Do nothing, other than return the shared instance - as this is expected from autorelease.
-- (id)autorelease {
-    return self;
-}
-
-#pragma mark -
 #pragma mark Cleanup 
 
 -(void)dealloc
 {
-    if (geolocation_ != nil) RELEASE_TO_NIL(geolocation_);
-    if (demographics_ != nil) RELEASE_TO_NIL(demographics_);
-    if (keywords_ != nil) RELEASE_TO_NIL(keywords_);
-    if (customParameters_ != nil) RELEASE_TO_NIL(customParameters_);
+    RELEASE_TO_NIL(geolocation_);
+    RELEASE_TO_NIL(demographics_);
+    RELEASE_TO_NIL(keywords_);
+    RELEASE_TO_NIL(customParameters_);
 
 	[super dealloc];
 }

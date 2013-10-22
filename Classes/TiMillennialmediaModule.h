@@ -13,12 +13,6 @@ typedef enum {
     TiMMInterstitial
 } TiMMType;
 
-#define FIRE_EVENT_IF_LISTENER(name, obj) \
-if ([self _hasListeners:name]) \
-{ \
-[self fireEvent:name withObject:obj]; \
-} \
-
 @interface TiMillennialmediaModule : TiModule <TiProxyDelegate>
 {
 @private
