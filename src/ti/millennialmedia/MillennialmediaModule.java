@@ -9,6 +9,8 @@ package ti.millennialmedia;
 import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
+import org.appcelerator.titanium.TiApplication;
+import org.appcelerator.kroll.common.Log;
 
 import com.millennialmedia.android.MMRequest;
 import com.millennialmedia.android.MMSDK;
@@ -18,11 +20,11 @@ import android.location.Location;
 
 @Kroll.module(name = "Millennialmedia", id = "ti.millennialmedia")
 public class MillennialmediaModule extends KrollModule {
-	
+	private static final String LCAT = "MillennialmediaModule";
+	private static final String ModuleName = "Millennialmedia";
+
 	public static final int TiMMBanner = 0;
 	public static final int TiMMInterstitial = 1;
-	
-	private static MillennialmediaModule _instance;
 	
 	private Activity _activity;
 	
@@ -32,16 +34,18 @@ public class MillennialmediaModule extends KrollModule {
 	private KrollDict _customParameters;
 	
 	public MillennialmediaModule() {
-		super();
-		
-		if (_instance == null) {
-			_instance = this;
-		}
+		super(ModuleName);
 	}
 	
 	public static MillennialmediaModule getInstance()
 	{
-		return _instance;
+		TiApplication appContext = TiApplication.getInstance();
+		MillennialmediaModule mmModule = (MillennialmediaModule)appContext.getModuleByName(ModuleName);
+	
+		if (mmModule == null) {
+			Log.w(LCAT,"Millennial Media module not currently loaded");
+		}
+		return mmModule;
 	}
 	
 	@Override
