@@ -15,4 +15,4 @@ name: millennialmedia
 moduleid: ti.millennialmedia
 guid: 72599f01-03dc-4c82-b474-6f18054d94a5
 platform: iphone
-minsdk: 3.4.1
+minsdk: 3.4.1.GA
