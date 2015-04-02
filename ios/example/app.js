@@ -19,7 +19,6 @@ MillennialMedia.demographics = {
     education: MillennialMedia.EDUCATION_SOME_COLLEGE,
     ethnicity: MillennialMedia.ETHNICITY_HISPANIC,
     maritalStatus: MillennialMedia.MARITAL_DIVORCED,
-    orientation: MillennialMedia.SEXUAL_ORIENTATION_STRAIGHT,
     zipCode: '60187'
 };
 
@@ -45,7 +44,7 @@ function curryEventHandler(type) {
 
 // 'applicationWillTerminateFromAd', 'modalWillAppear', and 'modalWillDismiss' are
 // iOS only, but it does not hurt to add their listeners on Android.
-var events = ['adRequestComplete', 'applicationWillTerminateFromAd', 'adWasTapped', 
+var events = ['adRequestComplete', 'applicationWillTerminateFromAd', 'adWasTapped',
     'modalWillAppear', 'modalDidAppear', 'modalWillDismiss', 'modalDidDismiss'];
 for (var k in events) {
     MillennialMedia.addEventListener(events[k], curryEventHandler(events[k]));

@@ -76,8 +76,6 @@ public class MillennialmediaModule extends KrollModule {
 					request.setEthnicity(val);
 				} else if (key.equals("maritalStatus")) {
 					request.setMarital(val);
-				} else if (key.equals("orientation")) {
-					request.setOrientation(val);
 				} else if (key.equals("age")) {
 					request.setAge(val);
 				} else if (key.equals("zipCode")) {
@@ -238,9 +236,4 @@ public class MillennialmediaModule extends KrollModule {
 	@Kroll.constant public static final String MARITAL_ENGAGED = MMRequest.MARITAL_ENGAGED;
 	@Kroll.constant public static final String MARITAL_OTHER = MMRequest.MARITAL_OTHER;
 
-	// Sexual Orientation
-	@Kroll.constant public static final String SEXUAL_ORIENTATION_STRAIGHT = MMRequest.ORIENTATION_STRAIGHT;
-	@Kroll.constant public static final String SEXUAL_ORIENTATION_GAY = MMRequest.ORIENTATION_GAY;
-	@Kroll.constant public static final String SEXUAL_ORIENTATION_BISEXUAL = MMRequest.ORIENTATION_BISEXUAL;
-	@Kroll.constant public static final String SEXUAL_ORIENTATION_OTHER = MMRequest.ORIENTATION_OTHER;
 }
