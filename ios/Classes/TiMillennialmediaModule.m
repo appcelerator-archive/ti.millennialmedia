@@ -1,6 +1,6 @@
 /**
  * Ti.MillennialMedia Module
- * Copyright (c) 2010-2013 by Appcelerator, Inc. All Rights Reserved.
+ * Copyright (c) 2010-2015 by Appcelerator, Inc. All Rights Reserved.
  * Please see the LICENSE included with this distribution for details.
  */
 
@@ -9,7 +9,7 @@
 #import "TiHost.h"
 #import "TiUtils.h"
 
-#import "MMSDK.h"
+#import <MillennialMedia/MMSDK.h>
 
 #define FIRE_EVENT_IF_LISTENER(name, obj) \
 if ([self _hasListeners:name]) \
@@ -147,8 +147,6 @@ static TiMillennialmediaModule *sharedInstance;
             request.ethnicity = [TiUtils doubleValue:prop];
         } else if ([key isEqualToString:@"maritalStatus"]) {
             request.maritalStatus = [TiUtils doubleValue:prop];
-        } else if ([key isEqualToString:@"orientation"]) {
-            request.orientation = [TiUtils doubleValue:prop];
         } else if ([key isEqualToString:@"age"]) {
             request.age = [TiUtils numberFromObject:prop];
         } else if ([key isEqualToString:@"zipCode"]) {
@@ -384,11 +382,5 @@ MAKE_SYSTEM_PROP(MARITAL_MARRIED, MMMaritalMarried);
 MAKE_SYSTEM_PROP(MARITAL_DIVORCED, MMMaritalDivorced);
 MAKE_SYSTEM_PROP(MARITAL_ENGAGED, MMMaritalEngaged);
 MAKE_SYSTEM_PROP(MARITAL_OTHER, MMMaritalOther);
-
-// Sexual Orientation
-MAKE_SYSTEM_PROP(SEXUAL_ORIENTATION_STRAIGHT, MMSexualOrientationStraight);
-MAKE_SYSTEM_PROP(SEXUAL_ORIENTATION_GAY, MMSexualOrientationGay);
-MAKE_SYSTEM_PROP(SEXUAL_ORIENTATION_BISEXUAL, MMSexualOrientationBisexual);
-MAKE_SYSTEM_PROP(SEXUAL_ORIENTATION_OTHER, MMSexualOrientationOther);
 
 @end
