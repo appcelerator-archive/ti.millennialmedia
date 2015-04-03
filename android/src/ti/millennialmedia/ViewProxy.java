@@ -1,6 +1,6 @@
 /**
  * Appcelerator Titanium Mobile Modules
- * Copyright (c) 2010-2013 by Appcelerator, Inc. All Rights Reserved.
+ * Copyright (c) 2010-2015 by Appcelerator, Inc. All Rights Reserved.
  * Proprietary and Confidential - This source code is not for redistribution
  */
 
@@ -19,7 +19,7 @@ import android.os.Message;
 
 @Kroll.proxy(creatableInModule = MillennialmediaModule.class)
 public class ViewProxy extends TiViewProxy {
-	
+
 	private UIView view;
 
 	public ViewProxy() {
@@ -31,7 +31,7 @@ public class ViewProxy extends TiViewProxy {
 		view = new UIView(this, activity);
 		return view;
 	}
-	
+
     private static final int MSG_REFRESH = 50000;
     private static final int MSG_DISPLAY = 60000;
     private static final int MSG_ISADAVAILABLE = 70000;
@@ -64,12 +64,12 @@ public class ViewProxy extends TiViewProxy {
 	{
         view.refresh();
 	}
-	
+
 	private void handleDisplay()
 	{
 		view.display();
 	}
-	
+
 	private Boolean handleIsAdAvailable()
 	{
 		return view.isAdAvailable();
@@ -78,7 +78,7 @@ public class ViewProxy extends TiViewProxy {
 	/**
 	 * Public API
 	 */
-	
+
 	@Kroll.method
 	public void refresh()
 	{
@@ -90,7 +90,7 @@ public class ViewProxy extends TiViewProxy {
         	}
         }
 	}
-	
+
 	@Kroll.method
 	public void display()
 	{
@@ -102,7 +102,7 @@ public class ViewProxy extends TiViewProxy {
         	}
         }
 	}
-	
+
 	@Kroll.method
 	public Boolean isAdAvailable()
 	{

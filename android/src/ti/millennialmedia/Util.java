@@ -1,6 +1,6 @@
 /**
  * Appcelerator Titanium Mobile Modules
- * Copyright (c) 2010-2013 by Appcelerator, Inc. All Rights Reserved.
+ * Copyright (c) 2010-2015 by Appcelerator, Inc. All Rights Reserved.
  * Proprietary and Confidential - This source code is not for redistribution
  */
 
@@ -13,13 +13,13 @@ import org.appcelerator.kroll.common.Log;
 
 /**
  * Holds various static methods that we will use throughout the module.
- * 
+ *
  * @author Dawson Toth, Appcelerator Inc.
  */
 public final class Util {
-	
+
 	public static final String LCAT = "MillennialmediaModule";
-	
+
 	/**
 	 * Prevents instantiation.
 	 */
@@ -39,10 +39,10 @@ public final class Util {
 
 		return new KrollDict((HashMap) hm);
 	}
-	
+
 	public static String join(String[] arr) {
 		if(arr.length < 1) return "";
-		
+
 		StringBuilder builder = new StringBuilder();
 		int length = arr.length;
 		int index = 0;
@@ -54,7 +54,7 @@ public final class Util {
 		}
 		return builder.toString();
 	}
-	
+
 	/*
 	 * These 8 methods are useful for logging purposes -- they make what we do
 	 * in this module a tiny bit easier.
