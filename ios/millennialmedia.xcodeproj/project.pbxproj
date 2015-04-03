@@ -32,7 +32,27 @@
 		A89DCF22140D694F001A3993 /* TiMillennialmediaViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A89DCF20140D694F001A3993 /* TiMillennialmediaViewProxy.m */; };
 		AA747D9F0F9514B9006C5449 /* TiMillennialmedia_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TiMillennialmedia_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		D344D74E1ACDDD2A003EBFD7 /* MillennialMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D344D74D1ACDDD2A003EBFD7 /* MillennialMedia.framework */; };
+		D3417A591ACF0D7D0019F077 /* MMAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = D3417A551ACF0D7D0019F077 /* MMAdView.h */; };
+		D3417A5A1ACF0D7D0019F077 /* MMInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = D3417A561ACF0D7D0019F077 /* MMInterstitial.h */; };
+		D3417A5B1ACF0D7D0019F077 /* MMRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = D3417A571ACF0D7D0019F077 /* MMRequest.h */; };
+		D3417A5C1ACF0D7D0019F077 /* MMSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = D3417A581ACF0D7D0019F077 /* MMSDK.h */; };
+		D3417A5E1ACF0D9E0019F077 /* libMMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3417A5D1ACF0D9E0019F077 /* libMMSDK.a */; };
+		D344D74F1ACE7023003EBFD7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89DCF17140D686C001A3993 /* CoreGraphics.framework */; };
+		D344D7511ACE7030003EBFD7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D344D7501ACE7030003EBFD7 /* AudioToolbox.framework */; };
+		D344D7531ACE7040003EBFD7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D344D7521ACE703F003EBFD7 /* AVFoundation.framework */; };
+		D344D7551ACE705B003EBFD7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D344D7541ACE705B003EBFD7 /* AdSupport.framework */; };
+		D344D7571ACE706A003EBFD7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D344D7561ACE706A003EBFD7 /* CFNetwork.framework */; };
+		D344D7591ACE707F003EBFD7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D344D7581ACE707F003EBFD7 /* CoreLocation.framework */; };
+		D344D75B1ACE7089003EBFD7 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D344D75A1ACE7089003EBFD7 /* EventKit.framework */; };
+		D344D75C1ACE7094003EBFD7 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89DCF15140D6865001A3993 /* MediaPlayer.framework */; };
+		D344D75E1ACE709E003EBFD7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D344D75D1ACE709E003EBFD7 /* MobileCoreServices.framework */; };
+		D344D7601ACE70A6003EBFD7 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D344D75F1ACE70A6003EBFD7 /* PassKit.framework */; };
+		D344D7611ACE70AE003EBFD7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89DCF13140D685C001A3993 /* QuartzCore.framework */; };
+		D344D7631ACE70B6003EBFD7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D344D7621ACE70B6003EBFD7 /* Security.framework */; };
+		D344D7651ACE70BC003EBFD7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D344D7641ACE70BC003EBFD7 /* Social.framework */; };
+		D344D7691ACE70E1003EBFD7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D344D7681ACE70E1003EBFD7 /* StoreKit.framework */; };
+		D344D76B1ACE70F0003EBFD7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D344D76A1ACE70F0003EBFD7 /* SystemConfiguration.framework */; };
+		D344D76C1ACE70F7003EBFD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89DCF19140D6873001A3993 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +83,23 @@
 		AA747D9E0F9514B9006C5449 /* TiMillennialmedia_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiMillennialmedia_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libTiMillennialmedia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTiMillennialmedia.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D344D74D1ACDDD2A003EBFD7 /* MillennialMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MillennialMedia.framework; sourceTree = "<group>"; };
+		D3417A551ACF0D7D0019F077 /* MMAdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MMAdView.h; path = MMSDK/MMAdView.h; sourceTree = "<group>"; };
+		D3417A561ACF0D7D0019F077 /* MMInterstitial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MMInterstitial.h; path = MMSDK/MMInterstitial.h; sourceTree = "<group>"; };
+		D3417A571ACF0D7D0019F077 /* MMRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MMRequest.h; path = MMSDK/MMRequest.h; sourceTree = "<group>"; };
+		D3417A581ACF0D7D0019F077 /* MMSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MMSDK.h; path = MMSDK/MMSDK.h; sourceTree = "<group>"; };
+		D3417A5D1ACF0D9E0019F077 /* libMMSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMMSDK.a; path = MMSDK/libMMSDK.a; sourceTree = "<group>"; };
+		D344D7501ACE7030003EBFD7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D344D7521ACE703F003EBFD7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D344D7541ACE705B003EBFD7 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D344D7561ACE706A003EBFD7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D344D7581ACE707F003EBFD7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D344D75A1ACE7089003EBFD7 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		D344D75D1ACE709E003EBFD7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D344D75F1ACE70A6003EBFD7 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		D344D7621ACE70B6003EBFD7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D344D7641ACE70BC003EBFD7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		D344D7681ACE70E1003EBFD7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D344D76A1ACE70F0003EBFD7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +107,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3417A5E1ACF0D9E0019F077 /* libMMSDK.a in Frameworks */,
+				D344D76C1ACE70F7003EBFD7 /* UIKit.framework in Frameworks */,
+				D344D76B1ACE70F0003EBFD7 /* SystemConfiguration.framework in Frameworks */,
+				D344D7691ACE70E1003EBFD7 /* StoreKit.framework in Frameworks */,
+				D344D7651ACE70BC003EBFD7 /* Social.framework in Frameworks */,
+				D344D7631ACE70B6003EBFD7 /* Security.framework in Frameworks */,
+				D344D7611ACE70AE003EBFD7 /* QuartzCore.framework in Frameworks */,
+				D344D7601ACE70A6003EBFD7 /* PassKit.framework in Frameworks */,
+				D344D75E1ACE709E003EBFD7 /* MobileCoreServices.framework in Frameworks */,
+				D344D75C1ACE7094003EBFD7 /* MediaPlayer.framework in Frameworks */,
+				D344D75B1ACE7089003EBFD7 /* EventKit.framework in Frameworks */,
+				D344D7591ACE707F003EBFD7 /* CoreLocation.framework in Frameworks */,
+				D344D74F1ACE7023003EBFD7 /* CoreGraphics.framework in Frameworks */,
+				D344D7571ACE706A003EBFD7 /* CFNetwork.framework in Frameworks */,
+				D344D7551ACE705B003EBFD7 /* AdSupport.framework in Frameworks */,
+				D344D7531ACE7040003EBFD7 /* AVFoundation.framework in Frameworks */,
+				D344D7511ACE7030003EBFD7 /* AudioToolbox.framework in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
-				D344D74E1ACDDD2A003EBFD7 /* MillennialMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +142,10 @@
 		0867D691FE84028FC02AAC07 /* millennialmedia */ = {
 			isa = PBXGroup;
 			children = (
+				D3417A551ACF0D7D0019F077 /* MMAdView.h */,
+				D3417A561ACF0D7D0019F077 /* MMInterstitial.h */,
+				D3417A571ACF0D7D0019F077 /* MMRequest.h */,
+				D3417A581ACF0D7D0019F077 /* MMSDK.h */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
@@ -101,7 +157,19 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D344D74D1ACDDD2A003EBFD7 /* MillennialMedia.framework */,
+				D3417A5D1ACF0D9E0019F077 /* libMMSDK.a */,
+				D344D76A1ACE70F0003EBFD7 /* SystemConfiguration.framework */,
+				D344D7681ACE70E1003EBFD7 /* StoreKit.framework */,
+				D344D7641ACE70BC003EBFD7 /* Social.framework */,
+				D344D7621ACE70B6003EBFD7 /* Security.framework */,
+				D344D75F1ACE70A6003EBFD7 /* PassKit.framework */,
+				D344D75D1ACE709E003EBFD7 /* MobileCoreServices.framework */,
+				D344D75A1ACE7089003EBFD7 /* EventKit.framework */,
+				D344D7581ACE707F003EBFD7 /* CoreLocation.framework */,
+				D344D7561ACE706A003EBFD7 /* CFNetwork.framework */,
+				D344D7541ACE705B003EBFD7 /* AdSupport.framework */,
+				D344D7521ACE703F003EBFD7 /* AVFoundation.framework */,
+				D344D7501ACE7030003EBFD7 /* AudioToolbox.framework */,
 				A89DCF19140D6873001A3993 /* UIKit.framework */,
 				A89DCF17140D686C001A3993 /* CoreGraphics.framework */,
 				A89DCF15140D6865001A3993 /* MediaPlayer.framework */,
@@ -143,6 +211,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3417A591ACF0D7D0019F077 /* MMAdView.h in Headers */,
+				D3417A5A1ACF0D7D0019F077 /* MMInterstitial.h in Headers */,
+				D3417A5B1ACF0D7D0019F077 /* MMRequest.h in Headers */,
+				D3417A5C1ACF0D7D0019F077 /* MMSDK.h in Headers */,
 				AA747D9F0F9514B9006C5449 /* TiMillennialmedia_Prefix.pch in Headers */,
 				24DD6CF91134B3F500162E58 /* TiMillennialmediaModule.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* TiMillennialmediaModuleAssets.h in Headers */,
@@ -243,17 +315,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
-				"ARCHS[sdk=iphoneos*]" = (
-					armv6,
-					armv7,
-				);
-				"ARCHS[sdk=iphonesimulator*]" = i386;
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DSTROOT = /tmp/TiMillennialmedia.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/brian/Downloads/iOS_5_4_1_SDK/Frameworks,
 				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -272,11 +342,13 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
 					"\"$(SRCROOT)/lib\"",
 					"\"$(SRCROOT)/MMSDK\"",
+					"$(PROJECT_DIR)/MMSDK",
 				);
 				OTHER_CFLAGS = (
 					"-DDEBUG",
@@ -297,15 +369,13 @@
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"ARCHS[sdk=iphoneos*]" = (
-					armv6,
-					armv7,
-				);
-				"ARCHS[sdk=iphonesimulator*]" = i386;
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/TiMillennialmedia.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/brian/Downloads/iOS_5_4_1_SDK/Frameworks,
 				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = G5;
@@ -324,12 +394,14 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
 					"\"$(SRCROOT)/lib\"",
 					"\"$(SRCROOT)/MMSDK\"",
+					"$(PROJECT_DIR)/MMSDK",
 				);
 				OTHER_CFLAGS = "-DTI_POST_1_2";
 				OTHER_LDFLAGS = "-ObjC";
@@ -344,11 +416,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
-				"ARCHS[sdk=iphoneos*]" = (
-					armv6,
-					armv7,
-				);
-				"ARCHS[sdk=iphonesimulator*]" = i386;
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DSTROOT = /tmp/TiMillennialmedia.dst;
@@ -369,6 +438,8 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACH_O_TYPE = staticlib;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"-DDEBUG",
@@ -380,6 +451,8 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
+				SEPARATE_STRIP = YES;
+				STRIP_STYLE = debugging;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -389,11 +462,8 @@
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"ARCHS[sdk=iphoneos*]" = (
-					armv6,
-					armv7,
-				);
-				"ARCHS[sdk=iphonesimulator*]" = i386;
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/TiMillennialmedia.dst;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = G5;
@@ -412,12 +482,17 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 6.0;
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DTI_POST_1_2";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TiMillennialmedia;
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
+				SEPARATE_STRIP = YES;
+				STRIP_STYLE = debugging;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
