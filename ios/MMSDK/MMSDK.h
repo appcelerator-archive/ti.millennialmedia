@@ -2,11 +2,11 @@
 //  MMSDK.h
 //  MMSDK
 //
-//  Copyright (c) 2013 Millennial Media Inc. All rights reserved.
+//  Copyright (c) 2014 Millennial Media, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "MMRequest.h"
+#import <MillennialMedia/MMRequest.h>
 
 // NSNotification keys
 extern NSString * const MillennialMediaAdWillTerminateApplication;
@@ -41,8 +41,6 @@ typedef enum LogLevel {
     MMLOG_LEVEL_ERROR = 1 << 2,
     MMLOG_LEVEL_FATAL = 1 << 3
 } MMLogLevel;
-
-typedef void (^MMCompletionBlock) (BOOL success, NSError *error);
 
 @interface MMSDK : NSObject
 

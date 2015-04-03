@@ -2,11 +2,11 @@
 //  MMInterstitial.h
 //  MMSDK
 //
-//  Copyright (c) 2013 Millennial Media Inc. All rights reserved.
+//  Copyright (c) 2014 Millennial Media, Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "MMSDK.h"
+#import <MillennialMedia/MMSDK.h>
 
 @interface MMInterstitial : NSObject
 
@@ -21,7 +21,7 @@
 // Display an interstitial for a given APID. ViewController is required. Orientation is optional, use 0 if no preference.
 + (void)displayForApid:(NSString *)apid
     fromViewController:(UIViewController *)viewController
-       withOrientation:(UIInterfaceOrientation)overlayOrientation
+       withOrientation:(MMOverlayOrientationType)orientationType
           onCompletion:(MMCompletionBlock)callback;
 
 @end

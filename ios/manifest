@@ -2,8 +2,9 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 3.0.0
+version: 3.1.0
 apiversion: 2
+architectures: arm7 arm64 i386 x86_64
 description: Mobile Advertising with Millennial Media
 author: Dawson Toth & Jon Alter
 license: Appcelerator Commercial License
@@ -14,4 +15,4 @@ name: millennialmedia
 moduleid: ti.millennialmedia
 guid: 72599f01-03dc-4c82-b474-6f18054d94a5
 platform: iphone
-minsdk: 3.0.0.GA
+minsdk: 3.5.1.GA
