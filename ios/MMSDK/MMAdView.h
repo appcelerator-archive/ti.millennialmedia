@@ -2,7 +2,7 @@
 //  MMAdView.h
 //  MMAdView
 //
-//  Copyright (c) 2013 Millennial Media Inc. All rights reserved.
+//  Copyright (c) 2014 Millennial Media, Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -11,8 +11,8 @@
 @interface MMAdView : UIView
 
 // Set view controller to show overlay from
-@property (nonatomic, assign) UIViewController *rootViewController;
-@property (nonatomic) UIInterfaceOrientation overlayOrientation;
+@property (nonatomic, strong) UIViewController *rootViewController;
+@property (nonatomic) MMOverlayOrientationType orientationType;
 
 // Initializes the ad view and pass in the controller to present overlays from
 - (MMAdView *)initWithFrame:(CGRect)frame apid:(NSString *)apid rootViewController:(UIViewController *)viewController;

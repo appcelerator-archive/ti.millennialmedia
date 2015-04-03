@@ -1,6 +1,6 @@
 /**
  * Ti.MillennialMedia Module
- * Copyright (c) 2010-2013 by Appcelerator, Inc. All Rights Reserved.
+ * Copyright (c) 2010-2015 by Appcelerator, Inc. All Rights Reserved.
  * Please see the LICENSE included with this distribution for details.
  */
 
@@ -18,11 +18,11 @@
 - (id)init
 {
     self = [super init];
-    
+
     if (self) {
         adView_ = nil;
     }
-    
+
     return self;
 }
 
@@ -40,12 +40,12 @@
     if ([self adType] == TiMMInterstitial) {
         BOOL autoLoad = [TiUtils boolValue:[self.proxy valueForKey:@"autoLoad"] def:YES];
         MMRequest *request = [[TiMillennialmediaModule sharedInstance] request];
-        
+
         [MMInterstitial fetchWithRequest:request
                                     apid:[TiUtils stringValue:[self.proxy valueForKey:@"apid"]]
                             onCompletion:^(BOOL success, NSError *error) {
                                 [self fireRequestCompleteEvent:success error:error];
-                                
+
                                 if (success && autoLoad) {
                                         [self displayAd];
                                 }
@@ -56,7 +56,7 @@
 -(void)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds
 {
     int type = [self adType];
-    
+
     if (adView_ == nil && type == TiMMBanner) {
         // Create a 320 x 50 frame to display iPhone Banner ads, a 728 x 90 frame to display iPad Banner ads,
         // or a 300 x 250 frame to display Rectangle ads
@@ -64,7 +64,7 @@
                               rootViewController:[[TiApp app] controller]];
         adView_.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         [self addSubview:adView_];
-        
+
         BOOL autoLoad = [TiUtils boolValue:[self.proxy valueForKey:@"autoLoad"] def:YES];
         if (autoLoad) {
             [self getAd];
@@ -91,7 +91,7 @@
 {
     if (adView_ != nil) {
         MMRequest *request = [[TiMillennialmediaModule sharedInstance] request];
-        
+
         [adView_ getAdWithRequest:request
                     onCompletion:^(BOOL success, NSError *error) {
                         [self fireRequestCompleteEvent:success error:error];
@@ -133,7 +133,7 @@
         NSLog(@"[WARN] The `display` method is only for Interstitial ads.");
         return;
     }
-    
+
     [self displayAd];
 }
 
@@ -144,7 +144,7 @@
         NSLog(@"[WARN] The `refresh` method is only for Banner ads.");
         return;
     }
-    
+
     [self getAd];
 }
 

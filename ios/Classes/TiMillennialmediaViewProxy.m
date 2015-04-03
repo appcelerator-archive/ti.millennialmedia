@@ -1,6 +1,6 @@
 /**
  * Ti.MillennialMedia Module
- * Copyright (c) 2010-2013 by Appcelerator, Inc. All Rights Reserved.
+ * Copyright (c) 2010-2015 by Appcelerator, Inc. All Rights Reserved.
  * Please see the LICENSE included with this distribution for details.
  */
 
@@ -36,7 +36,7 @@ USE_VIEW_FOR_UI_METHOD(refresh);
         NSLog(@"[WARN] The `isAdAvailable` method is only for Interstitial ads.");
         return NUMBOOL(NO);
     }
-    
+
     return NUMBOOL([MMInterstitial isAdAvailableForApid:[TiUtils stringValue:[self valueForKey:@"apid"]]]);
 }
 
