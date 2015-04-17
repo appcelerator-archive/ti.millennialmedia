@@ -11,7 +11,7 @@ Note: you will need to have an account with Millennial Media. You can sign up fo
 
 View the [Using Titanium Modules](http://docs.appcelerator.com/titanium/latest/#!/guide/Using_Titanium_Modules) document for instructions on getting
 started with using this module in your application.
-	
+
 ## Accessing the Module
 
 Use `require` to access this module from JavaScript:
@@ -32,7 +32,6 @@ Demographic information about the current user, such as their age gender and loc
 * gender [int]: Set using module constants `GENDER_MALE`, `GENDER_FEMALE`, or `GENDER_UNKNOWN`.
 * ethnicity [int]: Set using module constants `ETHNICITY_ASIAN`, `ETHNICITY_BLACK`, `ETHNICITY_HISPANIC`, `ETHNICITY_INDIAN`, `ETHNICITY_MIDDLE_EASTERN`, `ETHNICITY_NATIVE_AMERICAN`, `ETHNICITY_PACIFIC_ISLANDER`, `ETHNICITY_WHITE`, or `ETHNICITY_OTHER`.
 * maritalStatus [int]: Set using module constants `MARITAL_SINGLE`, `MARITAL_MARRIED`, `MARITAL_DIVORCED`, or `MARITAL_ENGAGED`.
-* orientation [int]: Set using module constants `SEXUAL_ORIENTATION_STRAIGHT`, `SEXUAL_ORIENTATION_GAY`, `SEXUAL_ORIENTATION_BISEXUAL`, or `SEXUAL_ORIENTATION_UNKNOWN`.
 * age [string]: in years (e.g. 18) or an age
 * zipCode [string]: 5 digit US zip code
 
@@ -44,7 +43,6 @@ Demographic information about the current user, such as their age gender and loc
 	    education: MillennialMedia.EDUCATION_SOME_COLLEGE,
 	    ethnicity: MillennialMedia.ETHNICITY_HISPANIC,
 	    maritalStatus: MillennialMedia.MARITAL_DIVORCED,
-	    orientation: MillennialMedia.SEXUAL_ORIENTATION_STRAIGHT,
 	    zipCode: '60187'
 	};
 
@@ -64,7 +62,7 @@ Set the user's last known location. Any ads you display will use this informatio
 #### Example
 
 	MillennialMedia.geolocation = {
-	    latitude: 41.866, 
+	    latitude: 41.866,
 	    longitude: -88.107
 	};
 
@@ -128,7 +126,7 @@ Reports an event conversion.
 
 ### adRequestComplete
 Occurs whenever a request for an ad completes. It could be a success or a failure. A failure could occur due to the apid being incorrectly set, invalid,
-network connectivity failing, or some other unforeseen reason (such as the cubs losing). 
+network connectivity failing, or some other unforeseen reason (such as the cubs losing).
 
 The event object has the following properties:
 
@@ -154,7 +152,7 @@ The event object has the following properties:
 * adType [int]: The adType of the view that made the request. See the `adType` property of [Ti.MillennialMedia.View][].
 
 ### modalWillAppear
-Event fired when a modal view is about to be made visible. 
+Event fired when a modal view is about to be made visible.
 
 __iOS only.__
 
@@ -196,7 +194,7 @@ The event object has the following properties:
 Used to set `adType` when creating a [Ti.MillennialMedia.View][]. Use to create both Banner and Rectangle ads.
 
 ### TYPE_INTERSTITIAL
-Used to set `adType` when creating a [Ti.MillennialMedia.View][]. 
+Used to set `adType` when creating a [Ti.MillennialMedia.View][].
 
 ### LOG_LEVEL_INFO
 Used to set the `logLevel` of the MillennialMedia library.
@@ -287,18 +285,6 @@ Used to set `maritalStatus` in the `demographics` object.
 
 ### MARITAL_OTHER
 Used to set `maritalStatus` in the `demographics` object.
-
-### SEXUAL_ORIENTATION_STRAIGHT
-Used to set `orientation` in the `demographics` object.
-
-### SEXUAL_ORIENTATION_GAY
-Used to set `orientation` in the `demographics` object.
-
-### SEXUAL_ORIENTATION_BISEXUAL
-Used to set `orientation` in the `demographics` object.
-
-### SEXUAL_ORIENTATION_OTHER
-Used to set `orientation` in the `demographics` object.
 
 
 ## Usage

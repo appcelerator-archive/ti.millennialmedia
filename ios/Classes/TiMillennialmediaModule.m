@@ -1,6 +1,6 @@
 /**
  * Ti.MillennialMedia Module
- * Copyright (c) 2010-2013 by Appcelerator, Inc. All Rights Reserved.
+ * Copyright (c) 2010-2015 by Appcelerator, Inc. All Rights Reserved.
  * Please see the LICENSE included with this distribution for details.
  */
 
@@ -43,10 +43,10 @@ static TiMillennialmediaModule *sharedInstance;
 -(void)startup
 {
 	[super startup];
-    
+
     self.modelDelegate = self;
     sharedInstance = self;
-    
+
     [MMSDK initialize]; // Initialize a Millennial Media session
     [self listenForEvents];
 }
@@ -54,12 +54,12 @@ static TiMillennialmediaModule *sharedInstance;
 -(void)shutdown:(id)sender
 {
 	[super shutdown:sender];
-    
+
     [self stopListeningForEvents];
 }
 
 #pragma mark -
-#pragma mark Cleanup 
+#pragma mark Cleanup
 
 -(void)dealloc
 {
@@ -84,7 +84,7 @@ static TiMillennialmediaModule *sharedInstance;
     ENSURE_SINGLE_ARG(args, NSDictionary);
     id goalId = [args objectForKey:@"goalId"];
     ENSURE_STRING(goalId);
-    
+
     [MMSDK trackConversionWithGoalId:goalId requestData:[self request]];
 }
 
@@ -122,7 +122,7 @@ static TiMillennialmediaModule *sharedInstance;
     ENSURE_SINGLE_ARG(args, NSDictionary);
     id eventId = [args objectForKey:@"eventId"];
     ENSURE_STRING(eventId);
-    
+
     [MMSDK trackEventWithId:eventId];
 }
 
@@ -136,9 +136,9 @@ static TiMillennialmediaModule *sharedInstance;
     MMRequest *request = [[[MMRequest requestWithLocation:geolocation_] retain] autorelease];
 
     for (NSString *key in demographics_) {
-        
+
         id prop = [demographics_ objectForKey:key];
-        
+
         if ([key isEqualToString:@"education"]) {
             request.education = [TiUtils doubleValue:prop];
         } else if ([key isEqualToString:@"gender"]) {
@@ -147,23 +147,21 @@ static TiMillennialmediaModule *sharedInstance;
             request.ethnicity = [TiUtils doubleValue:prop];
         } else if ([key isEqualToString:@"maritalStatus"]) {
             request.maritalStatus = [TiUtils doubleValue:prop];
-        } else if ([key isEqualToString:@"orientation"]) {
-            request.orientation = [TiUtils doubleValue:prop];
         } else if ([key isEqualToString:@"age"]) {
             request.age = [TiUtils numberFromObject:prop];
         } else if ([key isEqualToString:@"zipCode"]) {
             request.zipCode = [TiUtils stringValue:prop];
         }
     }
-    
+
     if (keywords_ != nil) {
         request.keywords = keywords_;
     }
-    
+
     for (id key in customParameters_) {
         [request setValue:[TiUtils stringValue:[customParameters_ objectForKey:key]] forKey:[TiUtils stringValue:key]];
     }
-    
+
     return request;
 }
 
@@ -171,7 +169,7 @@ static TiMillennialmediaModule *sharedInstance;
 {
     NSString *typeString = [[notification userInfo] objectForKey:MillennialMediaAdTypeKey];
     NSNumber *type;
-    
+
     // The notification returns the adType as a string.
     // Converting it to match the module constants.
     if ([typeString isEqualToString:@"MillennialMediaAdTypeInterstitial"]) {
@@ -179,7 +177,7 @@ static TiMillennialmediaModule *sharedInstance;
     } else {
         type = [NSNumber numberWithInt:TiMMBanner];
     }
-    
+
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
                            type, @"adType",
                            [[notification userInfo] objectForKey:MillennialMediaAPIDKey], @"apid",
@@ -196,7 +194,7 @@ static TiMillennialmediaModule *sharedInstance;
 		// Value didn't really change
 		return;
 	}
-	
+
     // Validating and saving property values
     if ([key isEqualToString:@"demographics"]) {
         // validate and save location
@@ -224,7 +222,7 @@ static TiMillennialmediaModule *sharedInstance;
             if (geolocation_ != nil) {
                 RELEASE_TO_NIL(geolocation_);
             }
-            
+
             if (CLLocationCoordinate2DIsValid(CLLocationCoordinate2DMake(lat, lng))) {
                 geolocation_ = [[CLLocation alloc] initWithLatitude:lat longitude:lng];
             } else {
@@ -252,31 +250,31 @@ static TiMillennialmediaModule *sharedInstance;
                                              selector:@selector(applicationWillTerminateFromAd:)
                                                  name:MillennialMediaAdWillTerminateApplication
                                                object:nil];
-    
+
     // Notification will fire when an ad is tapped.
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(adWasTapped:)
                                                  name:MillennialMediaAdWasTapped
                                                object:nil];
-    
+
     // Notification will fire when an ad modal will appear.
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(adModalWillAppear:)
                                                  name:MillennialMediaAdModalWillAppear
                                                object:nil];
-    
+
     // Notification will fire when an ad modal did appear.
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(adModalDidAppear:)
                                                  name:MillennialMediaAdModalDidAppear
                                                object:nil];
-    
+
     // Notification will fire when an ad modal will dismiss.
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(adModalWillDismiss:)
                                                  name:MillennialMediaAdModalWillDismiss
                                                object:nil];
-    
+
     // Notification will fire when an ad modal did dismiss.
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(adModalDidDismiss:)
@@ -384,11 +382,5 @@ MAKE_SYSTEM_PROP(MARITAL_MARRIED, MMMaritalMarried);
 MAKE_SYSTEM_PROP(MARITAL_DIVORCED, MMMaritalDivorced);
 MAKE_SYSTEM_PROP(MARITAL_ENGAGED, MMMaritalEngaged);
 MAKE_SYSTEM_PROP(MARITAL_OTHER, MMMaritalOther);
-
-// Sexual Orientation
-MAKE_SYSTEM_PROP(SEXUAL_ORIENTATION_STRAIGHT, MMSexualOrientationStraight);
-MAKE_SYSTEM_PROP(SEXUAL_ORIENTATION_GAY, MMSexualOrientationGay);
-MAKE_SYSTEM_PROP(SEXUAL_ORIENTATION_BISEXUAL, MMSexualOrientationBisexual);
-MAKE_SYSTEM_PROP(SEXUAL_ORIENTATION_OTHER, MMSexualOrientationOther);
 
 @end

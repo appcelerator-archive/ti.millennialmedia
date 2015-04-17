@@ -1,5 +1,7 @@
 # Change Log
 <pre>
+v3.1.0	Upgraded to SDK 5.3.0
+
 v3.0.0	Upgraded to SDK 5.1.0 [MOD-1498]
 
 v2.2.1	Added attribution and built with 2.1.3.GA to support x86 devices [MOD-1087][MOD-1104]

@@ -2,11 +2,20 @@
 //  MMRequest.h
 //  MMSDK
 //
-//  Copyright (c) 2013 Millennial Media Inc. All rights reserved.
+//  Copyright (c) 2014 Millennial Media, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+
+enum {
+    MMOverlayOrientationTypeAll,
+    MMOverlayOrientationTypePortrait,
+    MMOverlayOrientationTypeLandscape
+};
+typedef NSUInteger MMOverlayOrientationType;
+
+typedef void (^MMCompletionBlock) (BOOL success, NSError *error);
 
 typedef enum {
     MMEducationOther,
@@ -47,13 +56,6 @@ typedef enum {
     MMMaritalEngaged
 } MMMaritalStatus;
 
-typedef enum {
-    MMSexualOrientationOther,
-    MMSexualOrientationGay,
-    MMSexualOrientationStraight,
-    MMSexualOrientationBisexual
-} MMSexualOrientation;
-
 @interface MMRequest : NSObject
 
 // Creates an MMRequest object
@@ -74,7 +76,6 @@ typedef enum {
 @property (nonatomic, assign) MMGender gender;
 @property (nonatomic, assign) MMEthnicity ethnicity;
 @property (nonatomic, assign) MMMaritalStatus maritalStatus;
-@property (nonatomic, assign) MMSexualOrientation orientation;
 @property (nonatomic, retain) NSNumber *age;
 @property (nonatomic, copy) NSString *zipCode;
 

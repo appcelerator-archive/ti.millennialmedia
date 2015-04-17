@@ -37,6 +37,22 @@
 		CE545B1F17BE984100FAD892 /* MMInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = CE545B1917BE984100FAD892 /* MMInterstitial.h */; };
 		CE545B2017BE984100FAD892 /* MMRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = CE545B1A17BE984100FAD892 /* MMRequest.h */; };
 		CE545B2117BE984100FAD892 /* MMSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = CE545B1B17BE984100FAD892 /* MMSDK.h */; };
+		D33EF34A1ACF284800734CDE /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33EF3491ACF284800734CDE /* AdSupport.framework */; };
+		D33EF34C1ACF284F00734CDE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33EF34B1ACF284F00734CDE /* AudioToolbox.framework */; };
+		D33EF34E1ACF285500734CDE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33EF34D1ACF285500734CDE /* AVFoundation.framework */; };
+		D33EF3501ACF285C00734CDE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33EF34F1ACF285C00734CDE /* CFNetwork.framework */; };
+		D33EF3511ACF286300734CDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89DCF17140D686C001A3993 /* CoreGraphics.framework */; };
+		D33EF3531ACF286800734CDE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33EF3521ACF286800734CDE /* CoreLocation.framework */; };
+		D33EF3551ACF286E00734CDE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33EF3541ACF286E00734CDE /* EventKit.framework */; };
+		D33EF3561ACF287C00734CDE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89DCF15140D6865001A3993 /* MediaPlayer.framework */; };
+		D33EF3581ACF288400734CDE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33EF3571ACF288400734CDE /* MobileCoreServices.framework */; };
+		D33EF35A1ACF288A00734CDE /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33EF3591ACF288A00734CDE /* PassKit.framework */; };
+		D33EF35B1ACF289000734CDE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89DCF13140D685C001A3993 /* QuartzCore.framework */; };
+		D33EF35D1ACF289600734CDE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33EF35C1ACF289600734CDE /* Security.framework */; };
+		D33EF35F1ACF289C00734CDE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33EF35E1ACF289C00734CDE /* Social.framework */; };
+		D33EF3611ACF28B000734CDE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33EF3601ACF28B000734CDE /* StoreKit.framework */; };
+		D33EF3631ACF28B900734CDE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33EF3621ACF28B900734CDE /* SystemConfiguration.framework */; };
+		D33EF3641ACF28C200734CDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89DCF19140D6873001A3993 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +89,18 @@
 		CE545B1B17BE984100FAD892 /* MMSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSDK.h; sourceTree = "<group>"; };
 		CE545B1C17BE984100FAD892 /* version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = version; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libTiMillennialmedia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTiMillennialmedia.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D33EF3491ACF284800734CDE /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D33EF34B1ACF284F00734CDE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D33EF34D1ACF285500734CDE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D33EF34F1ACF285C00734CDE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D33EF3521ACF286800734CDE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D33EF3541ACF286E00734CDE /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		D33EF3571ACF288400734CDE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D33EF3591ACF288A00734CDE /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		D33EF35C1ACF289600734CDE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D33EF35E1ACF289C00734CDE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		D33EF3601ACF28B000734CDE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D33EF3621ACF28B900734CDE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +108,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D33EF3641ACF28C200734CDE /* UIKit.framework in Frameworks */,
+				D33EF3631ACF28B900734CDE /* SystemConfiguration.framework in Frameworks */,
+				D33EF3611ACF28B000734CDE /* StoreKit.framework in Frameworks */,
+				D33EF35F1ACF289C00734CDE /* Social.framework in Frameworks */,
+				D33EF35D1ACF289600734CDE /* Security.framework in Frameworks */,
+				D33EF35B1ACF289000734CDE /* QuartzCore.framework in Frameworks */,
+				D33EF35A1ACF288A00734CDE /* PassKit.framework in Frameworks */,
+				D33EF3581ACF288400734CDE /* MobileCoreServices.framework in Frameworks */,
+				D33EF3561ACF287C00734CDE /* MediaPlayer.framework in Frameworks */,
+				D33EF3551ACF286E00734CDE /* EventKit.framework in Frameworks */,
+				D33EF3531ACF286800734CDE /* CoreLocation.framework in Frameworks */,
+				D33EF3511ACF286300734CDE /* CoreGraphics.framework in Frameworks */,
+				D33EF3501ACF285C00734CDE /* CFNetwork.framework in Frameworks */,
+				D33EF34E1ACF285500734CDE /* AVFoundation.framework in Frameworks */,
+				D33EF34C1ACF284F00734CDE /* AudioToolbox.framework in Frameworks */,
+				D33EF34A1ACF284800734CDE /* AdSupport.framework in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
 				CE545B1D17BE984100FAD892 /* libMMSDK.a in Frameworks */,
 			);
@@ -111,6 +155,18 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D33EF3621ACF28B900734CDE /* SystemConfiguration.framework */,
+				D33EF3601ACF28B000734CDE /* StoreKit.framework */,
+				D33EF35E1ACF289C00734CDE /* Social.framework */,
+				D33EF35C1ACF289600734CDE /* Security.framework */,
+				D33EF3591ACF288A00734CDE /* PassKit.framework */,
+				D33EF3571ACF288400734CDE /* MobileCoreServices.framework */,
+				D33EF3541ACF286E00734CDE /* EventKit.framework */,
+				D33EF3521ACF286800734CDE /* CoreLocation.framework */,
+				D33EF34F1ACF285C00734CDE /* CFNetwork.framework */,
+				D33EF34D1ACF285500734CDE /* AVFoundation.framework */,
+				D33EF34B1ACF284F00734CDE /* AudioToolbox.framework */,
+				D33EF3491ACF284800734CDE /* AdSupport.framework */,
 				A89DCF19140D6873001A3993 /* UIKit.framework */,
 				A89DCF17140D686C001A3993 /* CoreGraphics.framework */,
 				A89DCF15140D6865001A3993 /* MediaPlayer.framework */,
@@ -202,6 +258,8 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "millennialmedia" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
@@ -266,15 +324,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
-				);
-				"ARCHS[sdk=iphoneos*]" = (
-					armv6,
-					armv7,
-				);
-				"ARCHS[sdk=iphonesimulator*]" = i386;
+				ARCHS = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DSTROOT = /tmp/TiMillennialmedia.dst;
@@ -294,6 +346,7 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -319,15 +372,9 @@
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					armv7,
-				);
-				"ARCHS[sdk=iphoneos*]" = (
-					armv6,
-					armv7,
-				);
-				"ARCHS[sdk=iphonesimulator*]" = i386;
+				ARCHS = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/TiMillennialmedia.dst;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = G5;
@@ -345,7 +392,7 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
