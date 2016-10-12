@@ -3,12 +3,21 @@
  */
 #import "TiMillennialmediaModuleAssets.h"
 
-extern NSData * dataWithHexString (NSString * hexString);
+extern NSData* filterDataInRange(NSData* thedata, NSRange range);
 
 @implementation TiMillennialmediaModuleAssets
 
 - (NSData*) moduleAsset
 {
+	
+
+	return nil;
+}
+
+- (NSData*) resolveModuleAsset:(NSString*)path
+{
+	
+
 	return nil;
 }
 
